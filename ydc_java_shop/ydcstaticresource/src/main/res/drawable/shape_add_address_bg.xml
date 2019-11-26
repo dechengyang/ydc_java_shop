@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--添加收货地址背景-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/add_address_bg" />
+    <stroke
+        android:width="@dimen/line_1_px"
+        android:color="@color/line_color" />
+    <padding
+        android:bottom="@dimen/divide_8_dp"
+        android:left="@dimen/divide_30_dp"
+        android:right="@dimen/divide_30_dp"
+        android:top="@dimen/divide_8_dp" />
+</shape>

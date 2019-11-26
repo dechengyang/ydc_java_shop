@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.base.BaseFragment;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.base.mvp.factory.CreatePresenter;
 import com.ydcjavashop.shop.news.adapter.NewsAdapter;
 import com.ydcjavashop.shop.news.beans.NewsBean;
@@ -155,6 +156,11 @@ public class CategoryFragment extends BaseFragment<INewsView, NewsPresenter> imp
     @Override
     public boolean isActive() {
         return false;
+    }
+
+    @Override
+    public void succeed(Feed feed) {
+
     }
 
     @Override

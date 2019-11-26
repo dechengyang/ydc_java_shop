@@ -1,5 +1,7 @@
 package com.ydcjavashop.shop.base.mvp;
 
+import com.ydcjavashop.shop.base.Feed;
+
 /**
  * @Description MVP之V层 是所有VIEW的基类，其他类可以继承该类
  * @Author ydc
@@ -66,4 +68,7 @@ public interface IBaseView<T> {
      * @version 1.0
      */
     boolean isActive();
+
+
+    void succeed(Feed feed);
 }

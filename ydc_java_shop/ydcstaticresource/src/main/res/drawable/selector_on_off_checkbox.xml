@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--单选按钮-->
+    <item android:drawable="@mipmap/kai_mjf" android:state_checked="true"/>
+    <item android:drawable="@mipmap/guan_mjf"/>
+</selector>

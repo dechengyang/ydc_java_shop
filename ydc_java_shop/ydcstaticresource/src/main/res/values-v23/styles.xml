@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+                <!--设置沉浸式状态栏背景颜色-->
+                <item name="colorPrimaryDark">@color/white</item>
+                <!--设置沉浸式状态栏字体颜色-->
+                <item name="android:windowLightStatusBar">@color/black</item>
+                <!--设置各控制元件(如：EditText光标、check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色-->
+                <item name="colorAccent">@color/colorAccent</item>
+                <!--设置输入框不被软键盘遮挡-->
+                <item name="android:windowSoftInputMode">adjustPan</item>
+                <!--锁定屏幕为竖屏-->
+                <item name="android:screenOrientation">portrait</item>
+                <!--设置窗口背景为透明，用于右滑finish-->
+                <item name="android:windowBackground">@color/transparent</item>
+                <item name="android:colorBackgroundCacheHint">@null</item>
+                <item name="android:windowIsTranslucent">true</item>
+        </style>
+</resources>

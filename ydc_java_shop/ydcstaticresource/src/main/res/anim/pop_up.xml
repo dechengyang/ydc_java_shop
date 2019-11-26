@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:interpolator="@android:anim/decelerate_interpolator"
+
+        android:fromYDelta="-100%p"
+        android:toYDelta="+12%p"
+        android:duration="3000" />
+
+    <!-- fromYdalta:从Y轴哪里开始
+
+     toYDelta :从Y轴哪里结束
+
+     duration :时间
+     -->
+
+
+
+</set>

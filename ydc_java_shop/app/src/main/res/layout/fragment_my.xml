@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout
-    android:id="@+id/refresh"
-    style="@style/MatchMatch"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     android:background="@color/global_background">
 
-    <include
-        android:id="@+id/swipe_refresh_header"
-        layout="@layout/layout_google_hook_header"/>
 
     <ScrollView
-        android:id="@id/swipe_target"
+        android:id="@+id/swipe_target"
         style="@style/MatchMatch">
 
         <LinearLayout
@@ -663,34 +659,7 @@
                     android:textSize="@dimen/size_12_sp"
                     />
             </RelativeLayout>
-            <include layout="@layout/default_line_view"/>
-            <RelativeLayout
-                android:id="@+id/rl_my_commission"
-                style="@style/MatchHeight_40"
-                android:background="@color/white">
 
-                <TextView
-                    android:id="@+id/tv_my_commission"
-                    style="@style/WrapWrap"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/divide_15_dp"
-                    android:text="@string/my_commission"
-                    android:textColor="@color/black_3"
-                    android:textSize="@dimen/size_14_sp"/>
-
-                <TextView
-                    android:id="@+id/tv_my_account_commission"
-                    style="@style/MatchWrap"
-                    android:layout_alignBottom="@+id/tv_my_commission"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="@dimen/divide_15_dp"
-                    android:drawablePadding="@dimen/divide_10_dp"
-                    android:drawableRight="@mipmap/enter"
-                    android:gravity="center_vertical|right"
-                    android:textColor="@color/black_8"
-                    android:textSize="@dimen/size_12_sp"
-                    />
-            </RelativeLayout>
             <include layout="@layout/default_line_view"/>
             <RelativeLayout
                 android:id="@+id/rl_my_points"
@@ -722,34 +691,6 @@
             <include layout="@layout/default_line_view"/>
 
             <RelativeLayout
-                android:id="@+id/rl_my_manage_money"
-                style="@style/MatchHeight_40"
-                android:background="@color/white">
-
-                <TextView
-                    android:id="@+id/tv_my_manage_money"
-                    style="@style/WrapWrap"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/divide_15_dp"
-                    android:text="@string/my_manage_money_fund"
-                    android:textColor="@color/black_3"
-                    android:textSize="@dimen/size_14_sp"/>
-
-                <TextView
-                    android:id="@+id/tv_my_accumulated_income"
-                    style="@style/MatchWrap"
-                    android:layout_alignBottom="@+id/tv_my_manage_money"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="@dimen/divide_15_dp"
-                    android:drawablePadding="@dimen/divide_10_dp"
-                    android:drawableRight="@mipmap/enter"
-                    android:gravity="center_vertical|right"
-                    android:textColor="@color/black_8"
-                    android:textSize="@dimen/size_13_sp"/>
-            </RelativeLayout>
-
-            <include layout="@layout/default_line_view"/>
-            <RelativeLayout
                 android:id="@+id/rl_my_by_stages"
                 style="@style/MatchHeight_40"
                 android:background="@color/white">
@@ -775,35 +716,6 @@
                     android:textColor="@color/black_8"
                     android:textSize="@dimen/size_13_sp"/>
             </RelativeLayout>
-
-            <include layout="@layout/default_line_view"/>
-
-            <RelativeLayout
-                android:id="@+id/rl_my_manage_insurance"
-                style="@style/MatchHeight_40"
-                android:background="@color/white">
-
-                <TextView
-                    android:id="@+id/tv_my_manage_insurance"
-                    style="@style/WrapWrap"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/divide_15_dp"
-                    android:text="@string/my_manage_insurance"
-                    android:textColor="@color/black_3"
-                    android:textSize="@dimen/size_14_sp"/>
-
-                <TextView
-                    style="@style/WrapWrap"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/tv_my_manage_insurance"
-                    android:layout_marginRight="@dimen/divide_15_dp"
-                    android:drawablePadding="@dimen/divide_10_dp"
-                    android:drawableRight="@mipmap/enter"
-                    android:textColor="@color/black_8"
-                    android:textSize="@dimen/size_13_sp"/>
-            </RelativeLayout>
-
 
             <include layout="@layout/line_view"/>
 
@@ -951,7 +863,5 @@
         </LinearLayout>
     </ScrollView>
 
-    <include
-        android:id="@+id/swipe_load_more_footer"
-        layout="@layout/layout_google_hook_footer"/>
-</com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout>
+
+</RelativeLayout>

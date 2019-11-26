@@ -14,6 +14,7 @@ import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.account.presenter.LoginPresenter;
 import com.ydcjavashop.shop.account.view.ILoginView;
 import com.ydcjavashop.shop.base.BaseActivity;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.base.mvp.factory.CreatePresenter;
 import com.ydcjavashop.shop.util.ValidateUtils;
 import com.ydcjavashop.shop.view.CheckEditTextEmptyButton;
@@ -96,6 +97,11 @@ public class RegistersActivity extends BaseActivity<ILoginView, LoginPresenter> 
     @Override
     public boolean isActive() {
         return false;
+    }
+
+    @Override
+    public void succeed(Feed feed) {
+
     }
 
     @Override

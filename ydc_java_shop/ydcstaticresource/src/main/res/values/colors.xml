@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#e9546b</color>
+    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
     <!-- 通用颜色的定义 -->
@@ -264,7 +263,7 @@
     <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
     <!--覆盖颜色-->
     <color name="bgColor_overlay">#60000000</color>
-
+    
     <!-- 美容培训-->
     <color name="training_transparent_color">#80000000</color>
 
@@ -297,8 +296,8 @@
     <!--ydc20161121 start播放器-->
     <color name="videobackcolor">#FF333333</color>
     <!--zys 我的佣金字体颜色-->
-    <color name="commission_orange">#f7bfa9</color>
-    <!--首页店铺-->
+   <color name="commission_orange">#f7bfa9</color>
+     <!--首页店铺-->
     <color name="home_pink">#ff6e8a</color>
     <color name="home_brown">#723e2f</color>
     <color name="home_brown_line">#bb9c99</color>
@@ -334,4 +333,11 @@
     <color name="dialogback">#99000000</color>
     <color name="text_white_color">#ffffff</color>
     <color name="text_gray_color">#cccccc</color>
+
+
+    <color name="black_p50">#7f000000</color>
+    <color name="gray_e7e7e7">#e7e7e7</color>
+    <color name="b_c_fafafa">#fafafa</color>
+    <color name="blue_4285f4">#a4ce49</color>
+    <color name="black_5a626d">#5a626d</color>
 </resources>

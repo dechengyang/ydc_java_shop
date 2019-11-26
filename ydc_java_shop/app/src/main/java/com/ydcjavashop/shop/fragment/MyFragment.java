@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.account.AccountManageActivity;
 import com.ydcjavashop.shop.base.BaseFragment;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.news.beans.NewsBean;
 import com.ydcjavashop.shop.news.presenter.NewsPresenter;
 import com.ydcjavashop.shop.news.view.INewsView;
@@ -110,6 +111,11 @@ public class MyFragment extends BaseFragment<INewsView, NewsPresenter> implement
     @Override
     public boolean isActive() {
         return false;
+    }
+
+    @Override
+    public void succeed(Feed feed) {
+
     }
 
 

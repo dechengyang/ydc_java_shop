@@ -10,12 +10,20 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.ydc.config.ApiConfig;
+import com.ydc.config.Constant;
+import com.ydc.config.SharePreferenceKey;
+import com.ydc.datarepository.sphelper.SharedPreferencesHelper;
+import com.ydcjavashop.shop.account.LoginActivity;
 import com.ydcjavashop.shop.base.BaseActivity;
 import com.ydcjavashop.shop.base.BaseFragment;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.base.mvp.IBaseView;
 import com.ydcjavashop.shop.fragment.CategoryFragment;
 import com.ydcjavashop.shop.fragment.MyFragment;
 import com.ydcjavashop.shop.news.HomeFragment;
+
+import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -72,6 +80,10 @@ public class MainActivity extends BaseActivity implements IBaseView {
         context = this;
         fragmentManager = getSupportFragmentManager();
         switchTab(0);
+
+        String token= (String) SharedPreferencesHelper.getInstance(MainActivity.this).get(SharePreferenceKey.TOKEN,"");
+        String t=token;
+
     }
 
     @Override
@@ -236,4 +248,10 @@ public class MainActivity extends BaseActivity implements IBaseView {
     public boolean isActive() {
         return false;
     }
+
+    @Override
+    public void succeed(Feed feed) {
+
+    }
+
 }

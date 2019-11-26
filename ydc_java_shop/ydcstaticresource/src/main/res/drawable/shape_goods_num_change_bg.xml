@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--改变购物数量按钮的背景-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="@dimen/line_1_px"
+        android:color="@color/line_color" />
+
+    <solid android:color="@color/transparent" />
+
+    <corners android:radius="@dimen/divide_5_dp" />
+
+</shape>

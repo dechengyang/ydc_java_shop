@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="false" android:state_pressed="false">
+        <shape>
+
+            <!-- 圆角 -->
+           <!-- <corners android:bottomLeftRadius="30dp" android:bottomRightRadius="30dp" android:topLeftRadius="30dp" android:topRightRadius="30dp"/>-->
+            <corners android:bottomLeftRadius="30dp" android:topLeftRadius="30dp"/>
+            <!-- 填充 -->
+            <solid android:color="@color/transparent_90"/>
+        </shape>
+    </item>
+
+</selector>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+     <!-- 圆角 -->
+    <corners android:radius="@dimen/divide_4_dp"/><!-- 设置圆角半径 -->
+     
+    <!-- 填充 -->
+    <solid
+        android:color="@color/financial_edit_background"/><!-- 填充的颜色 -->
+    <stroke android:color="@color/financial_gray_btn_color" android:width="@dimen/line_1_px"></stroke>
+  
+
+</shape>

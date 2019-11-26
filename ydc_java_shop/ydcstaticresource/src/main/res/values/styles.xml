@@ -1,11 +1,81 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--设置沉浸式状态栏背景颜色-->
+        <item name="colorPrimaryDark">@color/white</item>
+        <!--设置各控制元件(如：EditText光标、check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
+       <!-- 设置输入框不被软键盘遮挡-->
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <!--锁定屏幕为竖屏-->
+        <item name="android:screenOrientation">portrait</item>
+        <!--设置窗口背景为透明，用于右滑finish-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:launchMode">singleTop</item>
+
+        <!--<item name="windowActionBar">false</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+    </style>
+
+    <style name="MainActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--设置沉浸式状态栏背景颜色-->
+        <item name="colorPrimaryDark">@color/black</item>
+        <!--设置各控制元件(如：EditText光标、check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--锁定屏幕为竖屏-->
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:launchMode">singleTop</item>
+        <!--设置窗口背景为透明，用于右滑finish-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <!-- 美分期-->
+    <style name="StagingTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--设置沉浸式状态栏颜色-->
+        <item name="colorPrimaryDark">@color/staging_theme_color</item>
+        <!--设置各控制元件(如：EditText光标、check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色-->
+        <item name="colorAccent">@color/staging_theme_color</item>
+        <!--设置输入框不被软键盘遮挡-->
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <!--锁定屏幕为竖屏-->
+        <item name="android:screenOrientation">portrait</item>
+        <!--设置窗口背景为透明，用于右滑finish-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <!-- 基金-->
+    <style name="FundTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--设置沉浸式状态栏颜色-->
+        <item name="colorPrimaryDark">@color/fund_money_color</item>
+        <!--设置各控制元件(如：EditText光标、check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色-->
+        <item name="colorAccent">@color/fund_money_color</item>
+        <!--设置输入框不被软键盘遮挡-->
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <!--锁定屏幕为竖屏-->
+        <item name="android:screenOrientation">portrait</item>
+        <!--设置窗口背景为透明，用于右滑finish-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- title的标题 -->
+    <style name="Text">
+        <item name="android:textStyle">normal</item>
     </style>
 
     <!--tab的主题-->
@@ -14,11 +84,6 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">49dp</item>
         <item name="android:gravity">center_vertical</item>
-    </style>
-
-    <!-- title的标题 -->
-    <style name="Text">
-        <item name="android:textStyle">normal</item>
     </style>
 
     <!-- Title theme -->
@@ -38,6 +103,58 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!-- homeFragment -->
+    <style name="HomePlateStyle">
+        <item name="android:paddingTop">@dimen/divide_20_dp</item>
+        <item name="android:paddingBottom">@dimen/divide_20_dp</item>
+    </style>
+
+    <style name="HomePlateStyle2">
+        <item name="android:textSize">@dimen/size_18_sp</item>
+        <item name="android:layout_marginLeft">@dimen/divide_20_dp</item>
+    </style>
+    <!-- 美金融-->
+    <style name="ServiceTextStyle">
+        <item name="android:textSize">@dimen/size_14_sp</item>
+        <item name="android:textColor">@color/service_text_black</item>
+        <item name="android:drawablePadding">@dimen/divide_6_dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/divide_10_dp</item>
+        <item name="android:paddingBottom">@dimen/divide_10_dp</item>
+    </style>
+
+    <!-- 绿色选项卡字体-->
+    <style name="GreenTabTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/service_text_black</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--美金融 -->
+    <style name="FinancialTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawablePadding">@dimen/divide_10_dp</item>
+        <item name="android:layout_marginRight">@dimen/divide_20_dp</item>
+        <item name="android:textSize">@dimen/size_12_sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="FinancialConfirmTextStyle">
+        <item name="android:textColor">@color/black_9</item>
+        <item name="android:layout_marginRight">@dimen/divide_6_dp</item>
+        <item name="android:layout_marginTop">@dimen/divide_10_dp</item>
+        <item name="android:layout_marginLeft">@dimen/divide_10_dp</item>
+    </style>
+
+    <style name="FinancialConfirmTextStyle2">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:layout_marginRight">@dimen/divide_6_dp</item>
+        <item name="android:layout_marginTop">@dimen/divide_10_dp</item>
+    </style>
+
     <!--Dialog的动画效果-->
     <style name="dialog_anim_style">
         <item name="android:windowEnterAnimation">@anim/dialog_start</item>
@@ -50,4 +167,330 @@
         <item name="android:windowExitAnimation">@anim/alert_dialog_close</item>
     </style>
 
+    <style name="hold_history_anim_style" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/hold_mask_in</item>
+        <item name="android:windowExitAnimation">@anim/hold_mask_out</item>
+    </style>
+
+    <style name="hold_search_anim_style" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_window_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_window_out</item>
+    </style>
+
+    <style name="popup_anim_style">
+        <item name="android:windowEnterAnimation">@anim/dd_mask_in</item>
+        <item name="android:windowExitAnimation">@anim/dd_mask_out</item>
+    </style>
+    <!--美保险 -->
+    <style name="InsuranceTextStyle">
+        <item name="android:textSize">@dimen/size_16_sp</item>
+        <item name="android:textColor">@color/black_3</item>
+    </style>
+
+    <style name="InsuranceLinearlayoutStyle">
+        <item name="android:paddingLeft">@dimen/divide_15_dp</item>
+        <item name="android:paddingRight">@dimen/divide_15_dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">@dimen/divide_45_dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/divide_2_dp</item>
+        <item name="android:layout_marginRight">@dimen/divide_2_dp</item>
+    </style>
+
+    <!-- 美服务-->
+    <style name="ServiceDetailLayoutStyle">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingTop">@dimen/divide_15_dp</item>
+        <item name="android:paddingLeft">@dimen/divide_15_dp</item>
+        <item name="android:paddingRight">@dimen/divide_15_dp</item>
+        <item name="android:paddingBottom">@dimen/divide_20_dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="PersonalDataLinearLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">@dimen/divide_40_dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/divide_15_dp</item>
+        <item name="android:layout_marginRight">@dimen/divide_15_dp</item>
+    </style>
+
+    <style name="PersonalDataLeftText">
+        <item name="android:textSize">@dimen/size_14_sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/black_8</item>
+    </style>
+
+    <style name="PersonalDataRightText">
+        <item name="android:textSize">@dimen/size_14_sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black_3</item>
+    </style>
+    <!-- 绿色按钮-->
+    <style name="GreenBtnStyle">
+        <item name="android:textSize">@dimen/size_17_sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/shape_circle_btn_green_bg</item>
+        <item name="android:layout_height">@dimen/divide_45_dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/divide_5_dp</item>
+        <item name="android:layout_marginLeft">@dimen/divide_15_dp</item>
+        <item name="android:layout_marginRight">@dimen/divide_15_dp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_5_dp</item>
+    </style>
+
+    <style name="FinancialGrayTextStyle">
+        <item name="android:textColor">@color/financial_gray_text_color</item>
+        <item name="android:layout_marginTop">@dimen/divide_12_dp</item>
+    </style>
+
+    <style name="FinancialSuccessBlackTextStyle">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:layout_marginTop">@dimen/divide_12_dp</item>
+    </style>
+
+    <!-- 美分期-->
+    <style name="StagingBlackTextStyle">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:padding">@dimen/divide_14_dp</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+    </style>
+
+    <style name="StagingBlueTextStyle">
+        <item name="android:textColor">@color/staging_blue_text_color</item>
+        <item name="android:layout_marginRight">@dimen/divide_14_dp</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+        <item name="android:drawableRight">@mipmap/ic_light_arrow_right</item>
+        <item name="android:drawablePadding">@dimen/divide_8_dp</item>
+    </style>
+
+    <style name="StagingEditStyle">
+        <item name="android:layout_marginLeft">@dimen/divide_20_dp</item>
+        <item name="android:textSize">@dimen/size_14_sp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">@dimen/divide_10_dp</item>
+        <item name="android:textColorHint">@color/gray_d</item>
+        <item name="android:textColor">@color/black_3</item>
+    </style>
+
+    <style name="StagingThemeBtnStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginLeft">@dimen/divide_14_dp</item>
+        <item name="android:layout_marginRight">@dimen/divide_14_dp</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+        <item name="android:background">@drawable/staging_orange_btn_background</item>
+    </style>
+
+    <style name="StagingBlack8TextStyle">
+        <item name="android:textColor">@color/black_8</item>
+        <item name="android:padding">@dimen/divide_14_dp</item>
+        <item name="android:textSize">@dimen/size_14_sp</item>
+    </style>
+
+    <!--我的理财 -->
+    <style name="MoneyOrangeTextStyle">
+        <item name="android:textColor">@color/home_color_financial</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+    </style>
+
+    <style name="MoneyGray8TextStyle">
+        <item name="android:textColor">@color/black_8</item>
+        <item name="android:layout_marginRight">@dimen/divide_14_dp</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+    </style>
+
+    <style name="MoneyBlackTextStyle">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:layout_marginTop">@dimen/divide_10_dp</item>
+        <item name="android:textSize">@dimen/size_20_sp</item>
+    </style>
+    <!-- 自定义对话框-->
+    <style name="MyDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CheckBoxGreenStyle" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_cb_green</item>
+    </style>
+
+    <!--密码输入框样式-->
+    <style name="PassWordInputStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+    </style>
+
+    <!--商城中的按钮-->
+    <!--白底红色边框高度为35的按钮-->
+    <style name="red_border_35_height_btn_style">
+        <item name="android:textColor">@color/goods_red_btn</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/divide_6_dp</item>
+        <item name="android:paddingTop">@dimen/divide_6_dp</item>
+        <item name="android:paddingLeft">@dimen/divide_12_dp</item>
+        <item name="android:paddingRight">@dimen/divide_12_dp</item>
+        <item name="android:background">@drawable/selector_while_bg_red_border_click</item>
+    </style>
+    <!--白底红色边框高度为35的按钮-->
+    <style name="red_border_12_height_btn_style">
+        <item name="android:textColor">@color/goods_red_btn</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/divide_2_dp</item>
+        <item name="android:paddingTop">@dimen/divide_2_dp</item>
+        <item name="android:paddingLeft">@dimen/divide_2_dp</item>
+        <item name="android:paddingRight">@dimen/divide_2_dp</item>
+        <item name="android:background">@drawable/selector_while_bg_red_border_click</item>
+    </style>
+    <!--红色背景高度为35的按钮-->
+    <style name="red_bg_35_height_btn_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/divide_6_dp</item>
+        <item name="android:paddingTop">@dimen/divide_6_dp</item>
+        <item name="android:paddingLeft">@dimen/divide_12_dp</item>
+        <item name="android:paddingRight">@dimen/divide_12_dp</item>
+        <item name="android:background">@drawable/selector_red_btn_click</item>
+    </style>
+    <!--大的红色提交（确定）按钮-->
+    <style name="big_red_submit_btn_bg_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_red_btn_click</item>
+    </style>
+
+    <!--我的订单 -->
+    <style name="OrderBlackTextStyle">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_10_dp</item>
+        <item name="android:layout_marginLeft">@dimen/divide_14_dp</item>
+    </style>
+
+    <style name="OrderRedBtnStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/size_18_sp</item>
+        <item name="android:height">@dimen/button_height</item>
+        <item name="android:layout_marginLeft">@dimen/divide_14_dp</item>
+        <item name="android:layout_marginRight">@dimen/divide_14_dp</item>
+        <item name="android:background">@drawable/order_red_btn_bg</item>
+        <item name="android:layout_marginTop">@dimen/divide_4_dp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_4_dp</item>
+    </style>
+
+    <style name="OrderRefundBlackTextStyle">
+        <item name="android:textColor">@color/black_3</item>
+        <item name="android:layout_marginTop">@dimen/divide_8_dp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_8_dp</item>
+        <item name="android:textSize">@dimen/size_16_sp</item>
+    </style>
+
+    <style name="OrderRefundGrayTextStyle">
+        <item name="android:textColor">@color/black_8</item>
+        <item name="android:layout_marginTop">@dimen/divide_8_dp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_8_dp</item>
+        <item name="android:layout_marginLeft">@dimen/divide_24_dp</item>
+        <item name="android:textSize">@dimen/size_14_sp</item>
+    </style>
+    <style name="OrderRefundGrayRemarksTextStyle">
+        <item name="android:textColor">@color/black_8</item>
+        <item name="android:layout_marginTop">@dimen/divide_6_dp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_8_dp</item>
+        <item name="android:layout_marginLeft">@dimen/divide_24_dp</item>
+        <item name="android:textSize">@dimen/size_14_sp</item>
+    </style>
+
+    <style name="OrderEvaluatePink">
+        <item name="android:paddingTop">@dimen/divide_6_dp</item>
+        <item name="android:paddingBottom">@dimen/divide_6_dp</item>
+        <item name="android:paddingLeft">@dimen/divide_10_dp</item>
+        <item name="android:paddingRight">@dimen/divide_10_dp</item>
+        <item name="android:background">@color/order_pink_color</item>
+        <item name="android:textColor">@color/order_red_color</item>
+    </style>
+
+    <style name="OrderEvaluateGray">
+        <item name="android:paddingTop">@dimen/divide_6_dp</item>
+        <item name="android:paddingBottom">@dimen/divide_6_dp</item>
+        <item name="android:paddingLeft">@dimen/divide_10_dp</item>
+        <item name="android:paddingRight">@dimen/divide_10_dp</item>
+        <item name="android:background">@color/order_evaluate_gray_color</item>
+        <item name="android:layout_marginLeft">@dimen/divide_10_dp</item>
+        <item name="android:textColor">@color/black_8</item>
+    </style>
+
+
+    <!--美容培训 -->
+    <style name="TrainingWhiteTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginLeft">@dimen/divide_14_dp</item>
+        <item name="android:layout_marginTop">@dimen/divide_4_dp</item>
+        <item name="android:layout_marginBottom">@dimen/divide_8_dp</item>
+        <item name="android:textSize">@dimen/size_18_sp</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:background">#FFF</item>
+    </style>
+
+    <style name="loadingDialogStyle" parent="@android:style/Theme.Dialog">
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否有标题 -->
+        <item name="android:windowNoTitle">false</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否模糊 -->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">@color/global_background</item>
+    </style>
+
+    <style name="Widget.Design.AppBarLayout" parent="android:Widget">
+        <item name="elevation">0dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+
+    <!-- 右上角popupwindow -->
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="popupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
 </resources>
+

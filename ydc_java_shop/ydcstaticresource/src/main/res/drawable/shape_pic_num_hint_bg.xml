@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><!--商品图片数量提示背景-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="@dimen/divide_10_dp" />
+    <size android:height="@dimen/divide_20_dp" />
+    <solid android:color="#CCCCCC" />
+
+</shape>

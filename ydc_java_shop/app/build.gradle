@@ -33,6 +33,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
     implementation 'com.android.support:design:23.4.0'
     implementation 'com.jakewharton:butterknife:7.0.1'
     implementation 'io.reactivex:rxjava:1.1.5'
@@ -45,5 +46,8 @@ dependencies {
     implementation 'com.zxy.android:recovery:0.0.8'
     implementation 'com.android.support:multidex:1.0.0'
     implementation files('libs/MaterialDesign.jar')
+
     implementation project(':ydcstaticresource')
+    implementation project(':ydcdatarepository')
+    implementation project(':ydcconfig')
 }

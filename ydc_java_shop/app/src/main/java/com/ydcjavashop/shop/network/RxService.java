@@ -2,6 +2,8 @@ package com.ydcjavashop.shop.network;
 
 import android.util.Log;
 
+import com.ydc.config.ApiConfig;
+import com.ydc.config.Constant;
 import com.ydcjavashop.shop.global.URLRoot;
 
 import java.io.File;
@@ -96,7 +98,7 @@ public enum RxService {
 
             mRetrofit = new Retrofit.Builder()
                     .client(client)
-                    .baseUrl(URLRoot.API_PATH)
+                    .baseUrl(ApiConfig.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())//返回值为Gson的支持(以实体类返回)
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())//返回值为Oservable<T>的支持
                     .build();

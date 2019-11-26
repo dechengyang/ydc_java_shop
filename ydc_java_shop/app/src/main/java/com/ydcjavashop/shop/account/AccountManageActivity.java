@@ -22,6 +22,7 @@ import androidx.core.content.FileProvider;
 
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.base.BaseActivity;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.base.mvp.IBaseView;
 import com.ydcjavashop.shop.util.PhotoUtils;
 import com.ydcjavashop.shop.util.ToastUtils;
@@ -329,5 +330,10 @@ public class AccountManageActivity extends BaseActivity implements IBaseView, Ph
     @Override
     public boolean isActive() {
         return false;
+    }
+
+    @Override
+    public void succeed(Feed feed) {
+
     }
 }

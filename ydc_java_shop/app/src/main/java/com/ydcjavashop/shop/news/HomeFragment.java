@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.base.BaseFragment;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.base.mvp.factory.CreatePresenter;
 import com.ydcjavashop.shop.news.beans.NewsBean;
 import com.ydcjavashop.shop.news.presenter.NewsPresenter;
@@ -140,6 +141,11 @@ public class HomeFragment extends BaseFragment<INewsView, NewsPresenter> impleme
     @Override
     public boolean isActive() {
         return false;
+    }
+
+    @Override
+    public void succeed(Feed feed) {
+
     }
 
     @Override

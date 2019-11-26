@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 刷新view的ID-->
-    <item name="swipe_target" type="id" />
-    <!-- 头部view的ID-->
-    <item name="swipe_refresh_header" type="id" />
-    <!-- 尾部view的ID-->
-    <item name="swipe_load_more_footer" type="id" />
+    <!--购物车item id-->
+    <item name="group_position" type="id"/>
+    <item name="child_position" type="id"/>
+    <item name="store_id" type="id"/>
+    <item name="store_name" type="id"/>
+    <!--自定义点赞按钮-->
+    <item type="id" name="FloatingText_wrapper"/>
+    <!--banner -->
+    <item name="cb_item_tag" type="id"/>
+
+    <item name="id_stickynavlayout_topview" type="id"/>
+    <item name="id_stickynavlayout_viewpager" type="id"/>
+    <item name="id_stickynavlayout_indicator" type="id"/>
+    <item name="id_stickynavlayout_innerscrollview" type="id"/>
 </resources>

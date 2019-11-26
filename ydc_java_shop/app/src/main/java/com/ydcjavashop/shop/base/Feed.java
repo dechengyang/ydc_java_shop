@@ -3,34 +3,38 @@ package com.ydcjavashop.shop.base;
 import java.io.Serializable;
 import java.util.List;
 
+
 /**
  * Created by Administrator on 2017/7/6.
+ * 顶级类返回类型
  */
 
-public class Feed <T> implements Serializable {
+public class Feed<T> extends BaseFeed implements Serializable {
 
 
     private static final long serialVersionUID = 1L;
     protected String strJson;
     protected String strXml;
-    protected String status;
-    protected String code;
-    protected String solution;
-    protected String message;
     protected List<SubError> suberrors;
     protected T data;
-    protected String token;
     protected List<T> mList;
-    protected int totalSize;
 
-    public Feed()
-    {
+    public T getResult() {
+        return result;
     }
 
-    public Feed(String status, String message)
-    {
-        this.status = status;
-        this.message = message;
+    public void setResult(T result) {
+        this.result = result;
+    }
+
+    protected T result;
+
+    public Feed() {
+    }
+
+    public Feed(String status, String message) {
+        //this.status = status;
+        //this.message = message;
     }
 
     public String getStrJson() {
@@ -49,38 +53,6 @@ public class Feed <T> implements Serializable {
         this.strXml = strXml;
     }
 
-    public String getStatus()
-    {
-        return this.status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getSolution() {
-        return this.solution;
-    }
-
-    public void setSolution(String solution) {
-        this.solution = solution;
-    }
-
-    public String getMessage() {
-        return this.message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
     public List<SubError> getSuberrors() {
         return this.suberrors;
@@ -88,14 +60,6 @@ public class Feed <T> implements Serializable {
 
     public void setSuberrors(List<SubError> suberrors) {
         this.suberrors = suberrors;
-    }
-
-    public String getToken() {
-        return this.token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public T getData() {
@@ -112,13 +76,5 @@ public class Feed <T> implements Serializable {
 
     public void setmList(List<T> mList) {
         this.mList = mList;
-    }
-
-    public int getTotalSize() {
-        return this.totalSize;
-    }
-
-    public void setTotalSize(int totalSize) {
-        this.totalSize = totalSize;
     }
 }

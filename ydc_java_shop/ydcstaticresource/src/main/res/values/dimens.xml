@@ -59,6 +59,7 @@
     <dimen name="divide_130_dp">130dp</dimen>
     <dimen name="divide_150_dp">150dp</dimen>
     <dimen name="divide_180_dp">180dp</dimen>
+    <dimen name="divide_23_dp">23dp</dimen>
 
     <!-- 分割线 大小-->
     <dimen name="line_1_px">1px</dimen>
@@ -111,9 +112,9 @@
     <dimen name="picker_view_textSize">20sp</dimen>
 
 
+
+
     <dimen name="card_margin">5dp</dimen>
     <dimen name="news_image_width">86dp</dimen>
     <dimen name="news_image_height">60dp</dimen>
-
-
 </resources>

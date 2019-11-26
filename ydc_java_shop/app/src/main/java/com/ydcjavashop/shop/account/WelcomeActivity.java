@@ -7,6 +7,7 @@ import android.os.Handler;
 import com.ydcjavashop.shop.MainActivity;
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.base.BaseActivity;
+import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.base.mvp.IBaseView;
 
 
@@ -53,7 +54,7 @@ public class WelcomeActivity extends BaseActivity implements IBaseView {
             @Override
             public void run() {
                 Intent intent = new Intent();
-                intent.setClass(WelcomeActivity.this, MainActivity.class);
+                intent.setClass(WelcomeActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -101,5 +102,10 @@ public class WelcomeActivity extends BaseActivity implements IBaseView {
     @Override
     public boolean isActive() {
         return false;
+    }
+
+    @Override
+    public void succeed(Feed feed) {
+
     }
 }
