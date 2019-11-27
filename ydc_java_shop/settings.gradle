@@ -1,2 +1,2 @@
-include ':app', ':ydcstaticresource', ':ydcdatarepository', ':ydcconfig'
+include ':app', ':ydcstaticresource', ':ydcdatarepository', ':ydcconfig', ':ydcmvp', ':ydcnetworkservice', ':ydcbase'
 rootProject.name='ydc_java_shop'

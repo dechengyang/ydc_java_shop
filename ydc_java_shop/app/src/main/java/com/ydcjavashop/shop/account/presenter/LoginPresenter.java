@@ -1,10 +1,11 @@
 package com.ydcjavashop.shop.account.presenter;
 
+import com.ydc.networkservice.bean.Feed;
+import com.ydc.networkservice.core.ApiCallBack;
 import com.ydcjavashop.shop.account.bean.TokenBean;
 import com.ydcjavashop.shop.account.model.LoginAbstractModel;
 import com.ydcjavashop.shop.account.model.LoginModel;
-import com.ydcjavashop.shop.base.Feed;
-import com.ydcjavashop.shop.base.mvp.ApiCallBack;
+
 
 import java.util.Map;
 
@@ -12,7 +13,7 @@ import java.util.Map;
  * Created by decheng.yang on 2018/2/22.
  */
 
-public class LoginPresenter extends Presenter {
+public class LoginPresenter extends LoginAbstractPresenter {
     private LoginAbstractModel mModel;
     public LoginPresenter() {
         mModel=new LoginModel();
@@ -31,7 +32,7 @@ public class LoginPresenter extends Presenter {
             @Override
             public void onSuccess(Feed<TokenBean> feed) {
                 if (feed.getCode().equals("1000")) {
-                    getMvpView().succeed(feed);
+                    getMvpView().responseSucceed(feed);
                 } else {
                     getMvpView().showErrorMsg(feed.getMessage(), feed.getMessage());
                 }

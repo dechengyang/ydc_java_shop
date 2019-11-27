@@ -7,13 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ydc.mvp.factory.CreatePresenter;
+import com.ydc.mvp.view.AbstractBaseMvpFragment;
+import com.ydc.networkservice.bean.BaseFeed;
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.R;
-import com.ydcjavashop.shop.account.AccountManageActivity;
-import com.ydcjavashop.shop.base.BaseFragment;
-import com.ydcjavashop.shop.base.Feed;
-import com.ydcjavashop.shop.news.beans.NewsBean;
-import com.ydcjavashop.shop.news.presenter.NewsPresenter;
-import com.ydcjavashop.shop.news.view.INewsView;
+import com.ydcjavashop.shop.account.presenter.LoginPresenter;
+import com.ydcjavashop.shop.account.view.ILoginMvpView;
+import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnLoadMoreListener;
+import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnRefreshListener;
 
 import java.util.List;
 
@@ -25,7 +27,8 @@ import butterknife.OnClick;
  * Created by decheng.yang on 2018/2/5.
  */
 
-public class MyFragment extends BaseFragment<INewsView, NewsPresenter> implements INewsView {
+@CreatePresenter(LoginPresenter.class)
+public class MyFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPresenter> implements ILoginMvpView, OnRefreshListener, OnLoadMoreListener {
 
     //private View view;
     @Bind(R.id.iv_portrait)
@@ -60,18 +63,14 @@ public class MyFragment extends BaseFragment<INewsView, NewsPresenter> implement
         switch (view.getId()) {
             case R.id.iv_portrait:
                 //PhotoDialogFragment.newInStance().setClicTakePhotookListener(MyFragment.this).show(getFragmentManager(), TAG);
-                Intent intent = new Intent(getActivity(), AccountManageActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), AccountManageActivity.class);
+//                startActivity(intent);
 
                 break;
 
         }
     }
 
-    @Override
-    public void addNews(List<NewsBean> newsList) {
-
-    }
 
     @Override
     public void showLoading() {
@@ -114,9 +113,24 @@ public class MyFragment extends BaseFragment<INewsView, NewsPresenter> implement
     }
 
     @Override
-    public void succeed(Feed feed) {
+    public void succeed(BaseFeed feed) {
+
+    }
+
+    @Override
+    public void responseSucceed(Feed feed) {
 
     }
 
 
+
+    @Override
+    public void onLoadMore() {
+
+    }
+
+    @Override
+    public void onRefresh() {
+
+    }
 }

@@ -14,14 +14,16 @@ import com.ydc.config.ApiConfig;
 import com.ydc.config.Constant;
 import com.ydc.config.SharePreferenceKey;
 import com.ydc.datarepository.sphelper.SharedPreferencesHelper;
+import com.ydc.mvp.view.AbstractBaseMvpFragment;
+import com.ydc.mvp.view.AbstractBaseMvpFragmentActivity;
+import com.ydc.networkservice.bean.BaseFeed;
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.account.LoginActivity;
-import com.ydcjavashop.shop.base.BaseActivity;
-import com.ydcjavashop.shop.base.BaseFragment;
-import com.ydcjavashop.shop.base.Feed;
-import com.ydcjavashop.shop.base.mvp.IBaseView;
+import com.ydcjavashop.shop.account.presenter.LoginPresenter;
+import com.ydcjavashop.shop.account.view.ILoginMvpView;
 import com.ydcjavashop.shop.fragment.CategoryFragment;
+import com.ydcjavashop.shop.fragment.HomeFragment;
 import com.ydcjavashop.shop.fragment.MyFragment;
-import com.ydcjavashop.shop.news.HomeFragment;
 
 import java.util.HashMap;
 
@@ -30,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yicheng.android.ui.materialdesignlibrary.views.LayoutRipple;
 
-public class MainActivity extends BaseActivity implements IBaseView {
+public class MainActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView {
     @Bind(R.id.tab_home)
     LayoutRipple tab_home;
     @Bind(R.id.tab_home_icon)
@@ -63,8 +65,8 @@ public class MainActivity extends BaseActivity implements IBaseView {
 
     private HomeFragment homeFragment;
     private CategoryFragment categoryFragment;
-    private BaseFragment shoppingCartFragment;
-    private BaseFragment myFragment;
+    private AbstractBaseMvpFragment shoppingCartFragment;
+    private AbstractBaseMvpFragment myFragment;
 
     //Fragment管理器 获取Fragment的实例
     private FragmentManager fragmentManager;
@@ -93,6 +95,11 @@ public class MainActivity extends BaseActivity implements IBaseView {
 
     @Override
     protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
 
     }
 
@@ -250,8 +257,15 @@ public class MainActivity extends BaseActivity implements IBaseView {
     }
 
     @Override
-    public void succeed(Feed feed) {
+    public void succeed(BaseFeed feed) {
 
     }
+
+    @Override
+    public void responseSucceed(Feed feed) {
+
+    }
+
+
 
 }

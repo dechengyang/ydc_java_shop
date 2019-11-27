@@ -3,33 +3,24 @@ package com.ydcjavashop.shop.account;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
 import com.ydc.config.ApiConfig;
 import com.ydc.config.Constant;
 import com.ydc.config.SharePreferenceKey;
 import com.ydc.datarepository.sphelper.SharedPreferencesHelper;
+import com.ydc.mvp.factory.CreatePresenter;
+import com.ydc.mvp.view.AbstractBaseMvpFragmentActivity;
+import com.ydc.networkservice.bean.BaseFeed;
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.MainActivity;
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.account.bean.TokenBean;
 import com.ydcjavashop.shop.account.presenter.LoginPresenter;
-import com.ydcjavashop.shop.account.view.ILoginView;
-import com.ydcjavashop.shop.base.BaseActivity;
-import com.ydcjavashop.shop.base.Feed;
-import com.ydcjavashop.shop.base.mvp.factory.CreatePresenter;
-import com.ydcjavashop.shop.util.ValidateUtils;
-import com.ydcjavashop.shop.view.CheckEditTextEmptyButton;
-import com.ydcjavashop.shop.view.ClearEditText;
+import com.ydcjavashop.shop.account.view.ILoginMvpView;
 
 import java.util.HashMap;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -37,7 +28,7 @@ import butterknife.OnClick;
  * Created by decheng.yang on 2018/2/22.
  */
 @CreatePresenter(LoginPresenter.class)
-public class LoginActivity extends BaseActivity<ILoginView, LoginPresenter> implements ILoginView {
+public class LoginActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView {
 //    @Bind(R.id.til_phone)
 //    TextInputLayout til_phone;
 //    @Bind(R.id.til_pwd)
@@ -104,13 +95,19 @@ public class LoginActivity extends BaseActivity<ILoginView, LoginPresenter> impl
     }
 
     @Override
-    public void succeed(Feed feed) {
+    public void succeed(BaseFeed feed) {
+
+    }
+
+    @Override
+    public void responseSucceed(Feed feed) {
         TokenBean token= (TokenBean) feed.getData();
         SharedPreferencesHelper.getInstance(LoginActivity.this).put(SharePreferenceKey.TOKEN,
                 token.getToken());
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
 
     @Override
     protected void initTitle() {
@@ -119,6 +116,11 @@ public class LoginActivity extends BaseActivity<ILoginView, LoginPresenter> impl
 
     @Override
     protected void initView() {
+    }
+
+    @Override
+    protected void initData() {
+
     }
 
     @Override

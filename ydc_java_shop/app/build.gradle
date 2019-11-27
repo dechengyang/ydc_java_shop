@@ -50,4 +50,6 @@ dependencies {
     implementation project(':ydcstaticresource')
     implementation project(':ydcdatarepository')
     implementation project(':ydcconfig')
+    implementation project(':ydcmvp')
+    implementation project(':ydcnetworkservice')
 }

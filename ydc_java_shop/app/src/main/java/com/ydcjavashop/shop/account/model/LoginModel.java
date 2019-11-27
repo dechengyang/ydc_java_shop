@@ -1,12 +1,9 @@
 package com.ydcjavashop.shop.account.model;
 
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.account.bean.TokenBean;
-import com.ydcjavashop.shop.base.Feed;
 import com.ydcjavashop.shop.interfaces.IUserInfoService;
-
 import java.util.Map;
-
-
 import rx.Observable;
 
 /**

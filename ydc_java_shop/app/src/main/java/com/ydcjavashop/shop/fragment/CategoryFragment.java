@@ -11,14 +11,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ydc.mvp.factory.CreatePresenter;
+import com.ydc.mvp.view.AbstractBaseMvpFragment;
+import com.ydc.networkservice.bean.BaseFeed;
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.R;
-import com.ydcjavashop.shop.base.BaseFragment;
-import com.ydcjavashop.shop.base.Feed;
-import com.ydcjavashop.shop.base.mvp.factory.CreatePresenter;
-import com.ydcjavashop.shop.news.adapter.NewsAdapter;
-import com.ydcjavashop.shop.news.beans.NewsBean;
-import com.ydcjavashop.shop.news.presenter.NewsPresenter;
-import com.ydcjavashop.shop.news.view.INewsView;
+import com.ydcjavashop.shop.account.presenter.LoginPresenter;
+import com.ydcjavashop.shop.account.view.ILoginMvpView;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnLoadMoreListener;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnRefreshListener;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout;
@@ -32,8 +31,8 @@ import butterknife.ButterKnife;
 /**
  * Created by decheng.yang on 2018/2/5.
  */
-@CreatePresenter(NewsPresenter.class)
-public class CategoryFragment extends BaseFragment<INewsView, NewsPresenter> implements INewsView, OnRefreshListener, OnLoadMoreListener {
+@CreatePresenter(LoginPresenter.class)
+public class CategoryFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPresenter> implements ILoginMvpView, OnRefreshListener, OnLoadMoreListener {
 
 
     @Bind(R.id.refresh)
@@ -42,9 +41,7 @@ public class CategoryFragment extends BaseFragment<INewsView, NewsPresenter> imp
     RecyclerView mRecyclerView;
 
     private LinearLayoutManager mLayoutManager;
-    private NewsAdapter mAdapter;
-    private List<NewsBean> mData = new ArrayList<NewsBean>();
-    ;
+
     private int pageIndex = 0;
 
     //private View view;
@@ -72,25 +69,24 @@ public class CategoryFragment extends BaseFragment<INewsView, NewsPresenter> imp
 
     @Override
     protected void initView() {
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mAdapter = new NewsAdapter(getActivity().getApplicationContext(), mData);
-        mRecyclerView.setAdapter(mAdapter);
-
-        mLoadLayout.setOnRefreshListener(this);
-        mLoadLayout.setOnLoadMoreListener(this);
+//        mRecyclerView.setHasFixedSize(true);
+//        mLayoutManager = new LinearLayoutManager(getActivity());
+//        mRecyclerView.setLayoutManager(mLayoutManager);
+//
+//        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+//        mAdapter = new NewsAdapter(getActivity().getApplicationContext(), mData);
+//        mRecyclerView.setAdapter(mAdapter);
+//
+//        mLoadLayout.setOnRefreshListener(this);
+//        mLoadLayout.setOnLoadMoreListener(this);
 
     }
 
     @Override
     protected void setData() {
-        //mPresenter.loadNews(0, 0);
-        getMvpPresenter().loadNews(0, 0);
 
     }
+
 
     @Override
     public void onResume() {
@@ -110,13 +106,6 @@ public class CategoryFragment extends BaseFragment<INewsView, NewsPresenter> imp
         ButterKnife.unbind(this);
     }
 
-    @Override
-    public void addNews(List<NewsBean> newsList) {
-        onComplete(mLoadLayout);
-        mData.addAll(newsList);
-        mAdapter.notifyDataSetChanged();
-
-    }
 
     @Override
     public void showLoading() {
@@ -159,17 +148,24 @@ public class CategoryFragment extends BaseFragment<INewsView, NewsPresenter> imp
     }
 
     @Override
-    public void succeed(Feed feed) {
+    public void succeed(BaseFeed feed) {
 
     }
 
     @Override
+    public void responseSucceed(Feed feed) {
+
+    }
+
+
+
+    @Override
     public void onRefresh() {
-        getMvpPresenter().loadNews(0, 0);
+
     }
 
     @Override
     public void onLoadMore() {
-        getMvpPresenter().loadNews(0, 0);
+
     }
 }

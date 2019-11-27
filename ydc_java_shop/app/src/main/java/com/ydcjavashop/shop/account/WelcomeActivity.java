@@ -4,18 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.ydc.mvp.view.AbstractBaseMvpFragmentActivity;
+import com.ydc.networkservice.bean.BaseFeed;
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.MainActivity;
 import com.ydcjavashop.shop.R;
-import com.ydcjavashop.shop.base.BaseActivity;
-import com.ydcjavashop.shop.base.Feed;
-import com.ydcjavashop.shop.base.mvp.IBaseView;
+import com.ydcjavashop.shop.account.presenter.LoginPresenter;
+import com.ydcjavashop.shop.account.view.ILoginMvpView;
 
 
 /**
  * Created by decheng.yang on 2018/2/22.
  */
 
-public class WelcomeActivity extends BaseActivity implements IBaseView {
+public class WelcomeActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView {
     private Handler handler;
     private Runnable jumpRunnable;
 
@@ -39,6 +41,11 @@ public class WelcomeActivity extends BaseActivity implements IBaseView {
 
     @Override
     protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
 
     }
 
@@ -105,7 +112,14 @@ public class WelcomeActivity extends BaseActivity implements IBaseView {
     }
 
     @Override
-    public void succeed(Feed feed) {
+    public void succeed(BaseFeed feed) {
 
     }
+
+    @Override
+    public void responseSucceed(Feed feed) {
+
+    }
+
+
 }

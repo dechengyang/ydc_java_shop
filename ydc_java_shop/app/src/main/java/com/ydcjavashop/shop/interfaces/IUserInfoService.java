@@ -1,7 +1,7 @@
 package com.ydcjavashop.shop.interfaces;
 
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.account.bean.TokenBean;
-import com.ydcjavashop.shop.base.Feed;
 
 import java.util.Map;
 
@@ -18,5 +18,5 @@ public interface IUserInfoService {
     @FormUrlEncoded
     @POST
     Observable<Feed<TokenBean>> login(@Url String url,
-                                          @FieldMap Map<String, String> params);
+                                      @FieldMap Map<String, String> params);
 }

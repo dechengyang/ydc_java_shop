@@ -1,8 +1,8 @@
 package com.ydcjavashop.shop.account.model;
 
+import com.ydc.mvp.model.BaseMvpModel;
+import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.account.bean.TokenBean;
-import com.ydcjavashop.shop.base.BaseModel;
-import com.ydcjavashop.shop.base.Feed;
 
 import java.util.Map;
 
@@ -14,6 +14,6 @@ import rx.Observable;
  * Created by Administrator on 2017/7/6.
  */
 
-public abstract class LoginAbstractModel extends BaseModel {
+public abstract class LoginAbstractModel extends BaseMvpModel {
     public abstract Observable<Feed<TokenBean>> login(String url, Map<String, String> params);
 }
