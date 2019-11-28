@@ -5,12 +5,22 @@
     style="@style/MatchMatch"
     android:background="@color/white">
 
+    <LinearLayout
+        android:id="@+id/ll_titile_vive"
+        style="@style/FillHeight_44">
+
+        <include
+            android:id="@+id/title"
+            layout="@layout/app_title" />
+    </LinearLayout>
+
 
 
     <RelativeLayout
         android:id="@+id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/ll_titile_vive"
         android:layout_marginTop="@dimen/divide_14_dp"
         android:paddingLeft="@dimen/divide_40_dp"
         android:paddingRight="@dimen/divide_40_dp">
@@ -289,7 +299,7 @@
             android:paddingLeft="@dimen/divide_30_dp"
             android:paddingRight="@dimen/divide_30_dp">
 
-            <TextView
+            <com.ydc.base.view.CheckEditTextEmptyButton
                 android:id="@+id/btn_login"
                 style="@style/FillHeight_50"
                 android:background="@drawable/selector_red_btn_click"

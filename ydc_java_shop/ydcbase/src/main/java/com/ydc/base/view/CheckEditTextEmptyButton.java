@@ -1,4 +1,4 @@
-package com.ydcjavashop.shop.view;
+package com.ydc.base.view;
 
 import android.content.Context;
 import android.text.Editable;
@@ -31,6 +31,7 @@ public class CheckEditTextEmptyButton extends TextView implements TextWatcher {
 
     /**
      * 设置监听的EditText
+     *
      * @param ets
      */
     public void setEditText(TextView... ets) {
@@ -68,5 +69,19 @@ public class CheckEditTextEmptyButton extends TextView implements TextWatcher {
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    /**
+     *
+     */
+    public void AutoExecuteonTextChanged() {
+        for (TextView textView : mTextViews) {
+            if (textView.getText().toString().length() > 0) {
+                setEnabled(true);
+            } else {
+                setEnabled(false);
+                break;
+            }
+        }
     }
 }

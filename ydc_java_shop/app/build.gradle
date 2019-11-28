@@ -52,4 +52,5 @@ dependencies {
     implementation project(':ydcconfig')
     implementation project(':ydcmvp')
     implementation project(':ydcnetworkservice')
+    implementation project(':ydcbase')
 }
