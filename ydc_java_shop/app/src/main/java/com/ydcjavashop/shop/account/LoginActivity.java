@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -168,6 +169,19 @@ public class LoginActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView
 
     @Override
     protected void initView() {
+        refreshView();
+        ck_set.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //isCheckedAgreement = true;
+                } else {
+                    //isCheckedAgreement = false;
+
+                }
+            }
+        });
     }
 
     @Override

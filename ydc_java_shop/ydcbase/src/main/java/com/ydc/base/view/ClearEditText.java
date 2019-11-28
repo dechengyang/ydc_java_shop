@@ -1,9 +1,8 @@
-package com.ydcjavashop.shop.view;
+package com.ydc.base.view;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -14,8 +13,8 @@ import android.widget.EditText;
 
 import androidx.core.content.ContextCompat;
 
-import com.ydcjavashop.shop.R;
-import com.ydcjavashop.shop.util.DensityUtil;
+import com.ydc.base.R;
+import com.ydc.base.util.DensityUtil;
 
 
 public class ClearEditText extends EditText implements OnFocusChangeListener, TextWatcher {
