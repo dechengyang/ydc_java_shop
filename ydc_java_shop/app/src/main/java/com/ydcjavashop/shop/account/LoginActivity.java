@@ -24,11 +24,11 @@ import com.ydc.mvp.factory.CreatePresenter;
 import com.ydc.mvp.view.AbstractBaseMvpFragmentActivity;
 import com.ydc.networkservice.bean.BaseFeed;
 import com.ydc.networkservice.bean.Feed;
-import com.ydcjavashop.shop.MainActivity;
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.account.bean.TokenBean;
 import com.ydcjavashop.shop.account.presenter.LoginPresenter;
 import com.ydcjavashop.shop.account.view.ILoginMvpView;
+import com.ydcjavashop.shop.main.MainActivity;
 
 import java.util.HashMap;
 
@@ -155,8 +155,8 @@ public class LoginActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView
         title.getRightTitleView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, RegistersActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this, RegistersActivity .class);
+                startActivity(intent);
             }
         });
         title.getLeftTitleView().setOnClickListener(new View.OnClickListener() {

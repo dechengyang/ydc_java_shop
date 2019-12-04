@@ -1,4 +1,4 @@
-package com.ydcjavashop.shop;
+package com.ydcjavashop.shop.main;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,22 +10,18 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.ydc.config.ApiConfig;
-import com.ydc.config.Constant;
 import com.ydc.config.SharePreferenceKey;
 import com.ydc.datarepository.sphelper.SharedPreferencesHelper;
-import com.ydc.mvp.view.AbstractBaseMvpFragment;
 import com.ydc.mvp.view.AbstractBaseMvpFragmentActivity;
 import com.ydc.networkservice.bean.BaseFeed;
 import com.ydc.networkservice.bean.Feed;
-import com.ydcjavashop.shop.account.LoginActivity;
+import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.account.presenter.LoginPresenter;
 import com.ydcjavashop.shop.account.view.ILoginMvpView;
 import com.ydcjavashop.shop.fragment.CategoryFragment;
 import com.ydcjavashop.shop.fragment.HomeFragment;
 import com.ydcjavashop.shop.fragment.MyFragment;
-
-import java.util.HashMap;
+import com.ydcjavashop.shop.fragment.ShoppingcartFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -65,8 +61,8 @@ public class MainActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView,
 
     private HomeFragment homeFragment;
     private CategoryFragment categoryFragment;
-    private AbstractBaseMvpFragment shoppingCartFragment;
-    private AbstractBaseMvpFragment myFragment;
+    private ShoppingcartFragment shoppingCartFragment;
+    private MyFragment myFragment;
 
     //Fragment管理器 获取Fragment的实例
     private FragmentManager fragmentManager;
@@ -165,7 +161,7 @@ public class MainActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView,
                 break;
             case 2:
                 if (shoppingCartFragment == null) {
-                    shoppingCartFragment = new MyFragment();
+                    shoppingCartFragment = new ShoppingcartFragment();
                     ;
                     transaction.add(R.id.container, shoppingCartFragment);
                 } else {

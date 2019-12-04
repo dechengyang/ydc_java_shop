@@ -7,7 +7,6 @@ import android.util.DisplayMetrics;
 import androidx.multidex.MultiDexApplication;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.ydcjavashop.shop.MainActivity;
 import com.ydcjavashop.shop.R;
 import com.zxy.recovery.core.Recovery;
 

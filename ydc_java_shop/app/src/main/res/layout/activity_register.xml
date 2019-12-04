@@ -1,224 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch"
-    android:background="@color/global_background"
-    android:fitsSystemWindows="true">
+    android:background="@color/white">
 
     <LinearLayout
-        style="@style/MatchMatch"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:id="@+id/ll_titile_vive"
+        style="@style/FillHeight_44">
 
         <include
             android:id="@+id/title"
             layout="@layout/app_title" />
+    </LinearLayout>
 
-        <include layout="@layout/title_line" />
+    <LinearLayout
+        android:id="@+id/ll_topcontent"
+        style="@style/MatchMatch"
+        android:layout_below="@+id/ll_titile_vive"
+        android:layout_marginTop="@dimen/divide_30_dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/ll_input_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="58dp"
-            android:layout_marginRight="58dp"
-            android:layout_marginTop="76dp"
-            android:orientation="horizontal">
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_phone"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/size_16_sp" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/divide_15_dp">
 
-                <business.com.businessapp.view.ClearEditText
+                <TextView
+                    android:id="@+id/tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+86"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/size_14_sp" />
+
+                <View
+                    android:id="@+id/title_line"
+                    android:layout_width="1px"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="@dimen/divide_4_dp"
+                    android:layout_marginTop="@dimen/divide_4_dp"
+                    android:layout_toRightOf="@+id/tv_1"
+                    android:background="@color/line_color" />
+
+                <EditText
                     android:id="@+id/edt_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/title_line"
                     android:background="#00000000"
                     android:ems="10"
-                    android:hint="手机号"
+                    android:hint="请输入手机号"
                     android:inputType="number"
                     android:maxLength="@integer/phone_lenght"
                     android:paddingLeft="@dimen/divide_15_dp"
                     android:paddingRight="@dimen/divide_4_dp"
                     android:singleLine="true"
-                    android:textColorHint="@color/gray_df"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:imeOptions="normal"
+                    android:textColor="@color/black_3"
+                    android:textColorHint="@color/black_9"
                     android:textSize="@dimen/size_16_sp" />
-            </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tv_phone_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/magenta"
+                    android:textSize="@dimen/size_12_sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_1_px"
+            android:layout_below="@+id/rl_top"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/line_color"></View>
+
+        <LinearLayout
+            android:id="@+id/ll_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="验证码"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/size_16_sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/divide_15_dp">
+
+
+                <EditText
+                    android:id="@+id/edt_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:maxLength="@integer/phone_lenght"
+                    android:paddingRight="@dimen/divide_4_dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:imeOptions="normal"
+                    android:textColor="@color/black_3"
+                    android:textColorHint="@color/black_9"
+                    android:textSize="@dimen/size_14_sp" />
+
+                <TextView
+                    android:id="@+id/tv_code_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="获取验证码"
+                    android:textColor="@color/magenta"
+                    android:textSize="@dimen/size_14_sp" />
+            </RelativeLayout>
+
 
         </LinearLayout>
 
         <View
-            android:id="@+id/line_name"
             android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginLeft="58dp"
-            android:layout_marginRight="58dp"
-            android:background="@color/line_color" />
+            android:layout_height="@dimen/line_1_px"
+            android:layout_below="@+id/ll_code"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/line_color"></View>
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/ll_pwd_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="58dp"
-            android:layout_marginLeft="58dp">
-
-            <LinearLayout
-                android:id="@+id/ll_code"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="@dimen/divide_15_dp"
-                android:orientation="vertical">
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/til_pwd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <business.com.businessapp.view.ClearEditText
-                        android:id="@+id/edt_code"
-                        style="@style/MatchMatch"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="#00000000"
-                        android:ems="10"
-                        android:hint="短信验证码"
-                        android:inputType="textPassword"
-                        android:maxLength="16"
-                        android:paddingLeft="@dimen/divide_15_dp"
-                        android:paddingRight="@dimen/divide_4_dp"
-                        android:singleLine="true"
-                        android:textColorHint="@color/gray_df"
-                        android:textSize="@dimen/size_16_sp" />
-                </android.support.design.widget.TextInputLayout>
-
-
-            </LinearLayout>
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_sendcoe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/divide_15_dp"
-                android:layout_marginTop="@dimen/divide_15_dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/btn_red_background"
-                android:paddingBottom="8dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="8dp"
-                android:text="获取验证码"
-                android:textColor="@color/magenta"
-                android:textSize="13sp" />
-        </RelativeLayout>
+                android:text="密码"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/size_16_sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/divide_15_dp">
+
+
+                <EditText
+                    android:id="@+id/edt_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:maxLength="@integer/pass_lenght"
+                    android:paddingRight="@dimen/divide_4_dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:imeOptions="normal"
+                    android:textColor="@color/black_3"
+                    android:textColorHint="@color/black_9"
+                    android:textSize="@dimen/size_14_sp" />
+
+                <TextView
+                    android:id="@+id/tv_pwderror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/magenta"
+                    android:textSize="@dimen/size_12_sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
 
         <View
-            android:id="@+id/line_pwd"
             android:layout_width="match_parent"
-            android:layout_height="3px"
-            android:layout_marginLeft="58dp"
-            android:layout_marginRight="160dp"
-            android:background="@color/line_color" />
+            android:layout_height="@dimen/line_1_px"
+            android:layout_below="@+id/ll_pwd_value"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/line_color"></View>
 
 
-        <business.com.businessapp.view.CheckEditTextEmptyButton
-            android:id="@+id/btn_sign_in"
-            style="@style/FillHeight_40"
-            android:layout_marginLeft="58dp"
-            android:layout_marginRight="58dp"
-            android:layout_marginTop="@dimen/divide_15_dp"
-            android:background="@drawable/selector_red_btn_click"
-            android:gravity="center"
-            android:text="注册"
-            android:textColor="@color/white"
-            android:textSize="@dimen/size_16_sp" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/re_sanf_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/divide_30_dp">
-
-        <TextView
-            android:id="@+id/tv_content"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/divide_15_dp"
-            android:layout_toRightOf="@+id/iv_leftsanf"
-            android:gravity="center"
-            android:text="第三方账号快速登录"
-            android:textColor="#999999"
-            android:textSize="13sp" />
+            android:layout_marginTop="25dp"
+            android:paddingLeft="@dimen/divide_30_dp"
+            android:paddingRight="@dimen/divide_30_dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/iv_weixin"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:layout_marginLeft="@dimen/divide_4_dp"
+            <com.ydc.base.view.CheckEditTextEmptyButton
+                android:id="@+id/btn_login"
+                style="@style/FillHeight_50"
+                android:background="@drawable/selector_red_btn_click"
                 android:gravity="center"
-                android:src="@mipmap/mx_wx" />
+                android:text="注册"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_18_sp" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/iv_qq"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:layout_marginLeft="@dimen/divide_22_dp"
-                android:layout_toRightOf="@+id/iv_weixin"
-                android:src="@mipmap/mx_qq" />
-        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/ll_agreement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginLeft="30dp"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/divide_40_dp">
+            android:paddingTop="@dimen/divide_28_dp">
 
             <CheckBox
                 android:id="@+id/ck_set"
                 style="@style/WrapWrap"
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
-                android:layout_marginLeft="@dimen/divide_16_dp"
                 android:button="@drawable/selector_btn_checkbox"
-                android:checked="true"
+                android:checked="false"
                 android:paddingLeft="@dimen/divide_6_dp"
                 android:textColor="@color/black_9"
                 android:textSize="@dimen/size_13_sp" />
 
             <TextView
                 style="@style/WrapWrap"
-                android:text="“登录/注册”表示您同意"
+                android:text="我同意"
                 android:textColor="@color/black_9"
-                android:textSize="@dimen/size_13_sp" />
+                android:textSize="@dimen/size_14_sp" />
 
             <TextView
+                android:id="@+id/tv_userxieyi"
                 style="@style/WrapWrap"
-                android:text="用户许可协议"
-                android:textColor="@color/member_bg"
-                android:textSize="@dimen/size_13_sp" />
+                android:text="  ydc_java_shop服务协议"
+                android:textColor="@color/magenta"
+                android:textSize="@dimen/size_14_sp" />
 
         </LinearLayout>
+
+
     </LinearLayout>
+
 
 </RelativeLayout>
 

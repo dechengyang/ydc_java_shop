@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/global_background">
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_1_px"
+            android:background="@color/line_color" />
+
+        <TextView
+            android:id="@+id/tv_settle_accounts"
+            style="@style/big_red_submit_btn_bg_style"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/divide_10_dp"
+            android:layout_marginTop="@dimen/divide_10_dp"
+            android:text="结算" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_settle_accounts"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总金额"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/size_15_sp" />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/divide_2_dp"
+                android:text="￥0.00"
+                android:textColor="@color/goods_price_red"
+                android:textSize="@dimen/size_18_sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_save_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/divide_2_dp"
+                android:text="@string/already_save_price"
+                android:textColor="@color/black_8"
+                android:textSize="@dimen/size_15_sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+
+
+        <com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/swipe_refresh_header"
+                layout="@layout/layout_google_hook_header" />
+
+            <ExpandableListView
+                android:id="@+id/swipe_target"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:childDivider="@color/transparent"
+                android:divider="@color/transparent"
+                android:dividerHeight="@dimen/line_1_px"
+                android:listSelector="@color/transparent"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+
+        </com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout>
+    </LinearLayout>
+
+</RelativeLayout>

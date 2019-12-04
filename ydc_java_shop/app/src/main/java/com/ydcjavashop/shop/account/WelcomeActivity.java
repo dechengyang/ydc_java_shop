@@ -3,15 +3,18 @@ package com.ydcjavashop.shop.account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.WindowManager;
 
+import com.ydc.config.SharePreferenceKey;
+import com.ydc.datarepository.sphelper.SharedPreferencesHelper;
 import com.ydc.mvp.view.AbstractBaseMvpFragmentActivity;
 import com.ydc.networkservice.bean.BaseFeed;
 import com.ydc.networkservice.bean.Feed;
-import com.ydcjavashop.shop.MainActivity;
 import com.ydcjavashop.shop.R;
 import com.ydcjavashop.shop.account.presenter.LoginPresenter;
 import com.ydcjavashop.shop.account.view.ILoginMvpView;
+import com.ydcjavashop.shop.main.MainActivity;
 
 
 /**
@@ -65,10 +68,20 @@ public class WelcomeActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpVi
             @Override
             public void run() {
                 Intent intent = new Intent();
-                intent.setClass(WelcomeActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                String token= (String) SharedPreferencesHelper.getInstance(WelcomeActivity.this).get(SharePreferenceKey.TOKEN,"");
+                if (TextUtils.isEmpty(token)) {
+                    intent.setClass(WelcomeActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }else {
+                    intent.setClass(WelcomeActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }
+
+
             }
         };
         handler = new Handler();

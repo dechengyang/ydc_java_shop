@@ -12,6 +12,7 @@ import com.ydc.mvp.view.AbstractBaseMvpFragment;
 import com.ydc.networkservice.bean.BaseFeed;
 import com.ydc.networkservice.bean.Feed;
 import com.ydcjavashop.shop.R;
+import com.ydcjavashop.shop.account.AccountManageActivity;
 import com.ydcjavashop.shop.account.presenter.LoginPresenter;
 import com.ydcjavashop.shop.account.view.ILoginMvpView;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnLoadMoreListener;
@@ -58,7 +59,9 @@ public class MyFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPres
         return rootView;
     }
 
-    @OnClick({R.id.iv_portrait})
+    Intent intent;
+
+    @OnClick({R.id.iv_portrait, R.id.tv_account_manager})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_portrait:
@@ -66,6 +69,10 @@ public class MyFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPres
 //                Intent intent = new Intent(getActivity(), AccountManageActivity.class);
 //                startActivity(intent);
 
+                break;
+            case R.id.tv_account_manager:
+                intent = new Intent(getActivity(), AccountManageActivity.class);
+                startActivity(intent);
                 break;
 
         }
@@ -121,7 +128,6 @@ public class MyFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPres
     public void responseSucceed(Feed feed) {
 
     }
-
 
 
     @Override

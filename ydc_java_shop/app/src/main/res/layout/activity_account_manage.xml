@@ -1,282 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <include
-        layout="@layout/app_title"/>
-    <include
-        layout="@layout/title_line"/>
-    <business.com.businessapp.view.swipetoloadlayout.base.SwipeToLoadLayout
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_titile_vive"
+        style="@style/FillHeight_44">
+
+        <include
+            android:id="@+id/title"
+            layout="@layout/app_title" />
+    </LinearLayout>
+
+    <com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout
         android:id="@+id/mrefresh"
         style="@style/MatchMatch"
+        android:layout_below="@+id/ll_titile_vive"
         android:background="@color/global_background">
+
         <include
             android:id="@+id/swipe_refresh_header"
-            layout="@layout/layout_google_hook_header"/>
+            layout="@layout/layout_google_hook_header" />
 
         <ScrollView
             android:id="@id/swipe_target"
             style="@style/MatchMatch">
+
             <LinearLayout
-                android:orientation="vertical"
+                style="@style/MatchMatch"
                 android:background="@color/global_background"
-                style="@style/MatchMatch">
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:id="@+id/ll_head_portrait"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_60_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
                     <TextView
+                        style="@style/AutoWrap"
                         android:text="@string/account_manage_head_portrait"
-                        android:textSize="@dimen/size_16_sp"
                         android:textColor="@color/black_3"
-                        style="@style/AutoWrap"/>
+                        android:textSize="@dimen/size_16_sp" />
+
                     <ImageView
                         android:id="@+id/iv_head_portrait"
                         android:layout_width="@dimen/divide_45_dp"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:src="@mipmap/default_head_portrait"
-                        />
+                        android:src="@mipmap/default_head_portrait" />
+
                     <ImageView
-                        android:background="@mipmap/enter"
                         style="@style/WrapWrap"
-                        android:layout_marginLeft="@dimen/divide_10_dp"/>
+                        android:layout_marginLeft="@dimen/divide_10_dp"
+                        android:background="@mipmap/enter" />
                 </LinearLayout>
-                <include
-                    layout="@layout/default_line_view"/>
+
+                <include layout="@layout/default_line_view" />
+
                 <RelativeLayout
                     android:id="@+id/ll_name"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_45_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
                     <TextView
                         android:id="@+id/tv_nick_names"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/divide_45_dp"
                         android:gravity="center"
                         android:text="@string/account_manage_name"
-                        android:textSize="@dimen/size_16_sp"
                         android:textColor="@color/black_3"
-                        />
+                        android:textSize="@dimen/size_16_sp" />
+
                     <TextView
                         android:id="@+id/tv_name"
                         android:layout_width="match_parent"
-                        android:gravity="right|center"
-                        android:layout_toRightOf="@+id/tv_nick_names"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:text="@string/account_manage_hint_address"
                         android:layout_marginRight="@dimen/divide_20_dp"
-                        android:textSize="@dimen/size_14_sp"
+                        android:layout_toRightOf="@+id/tv_nick_names"
+                        android:gravity="right|center"
+                        android:text="@string/account_manage_hint_address"
                         android:textColor="@color/gray_c7"
-                        />
+                        android:textSize="@dimen/size_14_sp" />
+
                     <ImageView
-                        android:background="@mipmap/enter"
-                        android:layout_centerInParent="true"
-                        android:layout_alignParentRight="true"
                         style="@style/WrapWrap"
-                        />
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/enter" />
                 </RelativeLayout>
-                <include
-                    layout="@layout/default_line_view"/>
-                <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_signature" android:background="@color/white" android:paddingLeft="@dimen/divide_15_dp" android:paddingRight="@dimen/divide_15_dp" android:layout_width="fill_parent" android:layout_height="@dimen/divide_45_dp">
-                    <TextView android:textSize="@dimen/size_16_sp" android:text="个性签名"  android:textColor="@color/black_3" android:gravity="center" android:id="@+id/tv_nick_signature" android:layout_width="wrap_content" android:layout_height="@dimen/divide_45_dp" />
-                    <TextView android:textSize="@dimen/size_14_sp" android:textColor="@color/gray_c7" android:gravity="center|right" android:id="@+id/tv_signature_name" android:layout_width="fill_parent" android:layout_height="@dimen/divide_45_dp"
-                        android:text="@string/account_manage_hint_address"
-                        android:layout_marginRight="@dimen/divide_20_dp"
-                        android:layout_alignParentTop="true"
+
+                <include layout="@layout/default_line_view" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_signature"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/divide_45_dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
+                    <TextView
+                        android:id="@+id/tv_nick_signature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/divide_45_dp"
+                        android:gravity="center"
+                        android:text="个性签名"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/size_16_sp" />
+
+                    <TextView
+                        android:id="@+id/tv_signature_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/divide_45_dp"
+                        android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
-                    <ImageView android:background="@mipmap/enter" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/WrapWrap" />
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="@dimen/divide_20_dp"
+                        android:gravity="center|right"
+                        android:text="@string/account_manage_hint_address"
+                        android:textColor="@color/gray_c7"
+                        android:textSize="@dimen/size_14_sp" />
+
+                    <ImageView
+                        style="@style/WrapWrap"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/enter" />
 
                 </RelativeLayout>
+
                 <include layout="@layout/default_line_view" />
+
                 <RelativeLayout
                     android:id="@+id/ll_sex"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_45_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    >
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
                     <TextView
                         android:id="@+id/tv_account_manage_sex"
-                        android:text="@string/account_manage_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:textSize="@dimen/size_16_sp"
-                        android:textColor="@color/black_3"
                         android:gravity="center"
-                        />
+                        android:text="@string/account_manage_sex"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/size_16_sp" />
+
                     <TextView
                         android:id="@+id/tv_sex"
                         android:layout_width="match_parent"
-                        android:gravity="right|center"
-                        android:layout_toRightOf="@+id/tv_account_manage_sex"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:text="@string/account_manage_hint_address"
                         android:layout_marginRight="@dimen/divide_20_dp"
-                        android:textSize="@dimen/size_14_sp"
+                        android:layout_toRightOf="@+id/tv_account_manage_sex"
+                        android:gravity="right|center"
+                        android:text="@string/account_manage_hint_address"
                         android:textColor="@color/gray_c7"
-                        />
+                        android:textSize="@dimen/size_14_sp" />
+
                     <ImageView
-                        android:background="@mipmap/enter"
                         style="@style/WrapWrap"
+                        android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
-                        android:layout_alignParentRight="true" />
+                        android:background="@mipmap/enter" />
                 </RelativeLayout>
-                <include
-                    layout="@layout/default_line_view"/>
+
+                <include layout="@layout/default_line_view" />
+
                 <RelativeLayout
                     android:id="@+id/ll_age"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_45_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    >
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
                     <TextView
                         android:id="@+id/tv_account_manage_age"
-                        android:text="@string/account_manage_age"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:textSize="@dimen/size_16_sp"
-                        android:textColor="@color/black_3"
                         android:gravity="center"
-                        />
+                        android:text="@string/account_manage_age"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/size_16_sp" />
+
                     <TextView
                         android:id="@+id/tv_age"
                         android:layout_width="match_parent"
-                        android:gravity="right|center"
-                        android:layout_toRightOf="@+id/tv_account_manage_age"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:text="@string/account_manage_hint_address"
                         android:layout_marginRight="@dimen/divide_20_dp"
-                        android:textSize="@dimen/size_14_sp"
+                        android:layout_toRightOf="@+id/tv_account_manage_age"
+                        android:gravity="right|center"
+                        android:text="@string/account_manage_hint_address"
                         android:textColor="@color/gray_c7"
-                        />
+                        android:textSize="@dimen/size_14_sp" />
+
                     <ImageView
-                        android:background="@mipmap/enter"
                         style="@style/WrapWrap"
-                        android:layout_centerInParent="true"
                         android:layout_alignParentRight="true"
-                        />
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/enter" />
                 </RelativeLayout>
+
                 <TextView
-                    android:layout_marginTop="@dimen/divide_10_dp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/line_1_px"
                     android:layout_marginLeft="@dimen/divide_15_dp"
-                    android:layout_marginRight="@dimen/divide_15_dp"
-                    />
+                    android:layout_marginTop="@dimen/divide_10_dp"
+                    android:layout_marginRight="@dimen/divide_15_dp" />
+
                 <RelativeLayout
                     android:id="@+id/ll_address"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_45_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    >
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
                     <TextView
                         android:id="@+id/tv_address_name"
-                        android:text="@string/account_manage_address"
-                        android:textSize="@dimen/size_16_sp"
-                        android:textColor="@color/black_3"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/divide_45_dp"
                         android:gravity="center"
-                        />
+                        android:text="@string/account_manage_address"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/size_16_sp" />
+
                     <TextView
                         android:id="@+id/tv_address"
                         android:layout_width="match_parent"
-                        android:gravity="right|center"
-                        android:layout_toRightOf="@+id/tv_address_name"
                         android:layout_height="@dimen/divide_45_dp"
-                        android:text="@string/account_manage_hint_address"
                         android:layout_marginRight="@dimen/divide_20_dp"
-                        android:textSize="@dimen/size_14_sp"
+                        android:layout_toRightOf="@+id/tv_address_name"
+                        android:gravity="right|center"
+                        android:text="@string/account_manage_hint_address"
                         android:textColor="@color/gray_c7"
-                        />
+                        android:textSize="@dimen/size_14_sp" />
+
                     <ImageView
-                        android:background="@mipmap/enter"
-                        android:layout_centerInParent="true"
-                        android:layout_alignParentRight="true"
                         style="@style/WrapWrap"
-                        />
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/enter" />
                 </RelativeLayout>
-                <include
-                    layout="@layout/default_line_view"/>
+
+                <include layout="@layout/default_line_view" />
+
                 <LinearLayout
                     android:id="@+id/ll_safety"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_45_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
 
                     <TextView
-                        android:text="@string/account_manage_safety"
-                        android:textSize="@dimen/size_16_sp"
-                        android:textColor="@color/black_3"
+                        android:id="@+id/textView3"
                         style="@style/AutoWrap"
-                        android:id="@+id/textView3" />
+                        android:text="@string/account_manage_safety"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/size_16_sp" />
 
                     <TextView
                         android:id="@+id/tv_safety"
-                        android:text="@string/account_manage_hint_safety"
-                        android:textSize="@dimen/size_14_sp"
-                        android:textColor="@color/gray_c7"
-                        style="@style/WrapWrap" />
-                    <ImageView
-                        android:background="@mipmap/enter"
                         style="@style/WrapWrap"
-                        android:layout_marginLeft="@dimen/divide_10_dp"/>
+                        android:text="@string/account_manage_hint_safety"
+                        android:textColor="@color/gray_c7"
+                        android:textSize="@dimen/size_14_sp" />
+
+                    <ImageView
+                        style="@style/WrapWrap"
+                        android:layout_marginLeft="@dimen/divide_10_dp"
+                        android:background="@mipmap/enter" />
                 </LinearLayout>
-                <include
-                    layout="@layout/default_line_view"/>
+
+                <include layout="@layout/default_line_view" />
+
                 <LinearLayout
                     android:id="@+id/ll_bank_card"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_45_dp"
                     android:background="@color/white"
-                    android:paddingLeft="@dimen/divide_15_dp"
-                    android:paddingRight="@dimen/divide_15_dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/divide_15_dp"
+                    android:paddingRight="@dimen/divide_15_dp">
+
                     <TextView
+                        style="@style/AutoWrap"
                         android:text="@string/account_bank_card"
-                        android:textSize="@dimen/size_16_sp"
                         android:textColor="@color/black_3"
-                        style="@style/AutoWrap"/>
+                        android:textSize="@dimen/size_16_sp" />
+
                     <ImageView
-                        android:visibility="invisible"
                         android:id="@+id/iv_bank_card_point"
-                        style="@style/WrapWrap"/>
-                    <ImageView
-                        android:background="@mipmap/enter"
                         style="@style/WrapWrap"
-                        android:layout_marginLeft="@dimen/divide_10_dp"/>
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        style="@style/WrapWrap"
+                        android:layout_marginLeft="@dimen/divide_10_dp"
+                        android:background="@mipmap/enter" />
                 </LinearLayout>
-                <include
-                    layout="@layout/default_line_view"/>
+
+                <include layout="@layout/default_line_view" />
 
 
             </LinearLayout>
         </ScrollView>
-    </business.com.businessapp.view.swipetoloadlayout.base.SwipeToLoadLayout>
-</LinearLayout>
+    </com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="@dimen/divide_15_dp"
+        android:paddingLeft="@dimen/divide_30_dp"
+        android:paddingRight="@dimen/divide_30_dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="@dimen/divide_30_dp"
+            android:paddingRight="@dimen/divide_30_dp">
+
+            <com.ydc.base.view.CheckEditTextEmptyButton
+                android:id="@+id/btn_login"
+                style="@style/FillHeight_50"
+                android:background="@drawable/selector_red_btn_click"
+                android:gravity="center"
+                android:text="@string/account_manage_login_out"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_18_sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
