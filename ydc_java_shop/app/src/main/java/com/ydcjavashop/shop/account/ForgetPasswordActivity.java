@@ -17,7 +17,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 @CreatePresenter(LoginPresenter.class)
-public class AccountSettingActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView{
+public class ForgetPasswordActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView{
+
 
 
 
@@ -30,7 +31,7 @@ public class AccountSettingActivity extends AbstractBaseMvpFragmentActivity<ILog
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_account_setting);
+        setContentView(R.layout.activity_forgetpassword);
         ButterKnife.bind(this);
         super.onCreate(savedInstanceState);
 
@@ -90,7 +91,7 @@ public class AccountSettingActivity extends AbstractBaseMvpFragmentActivity<ILog
 
     @Override
     protected void initTitle() {
-        setTitle(getResources().getString(R.string.account_setting));
+        setTitle("忘记密码");
     }
 
     @Override

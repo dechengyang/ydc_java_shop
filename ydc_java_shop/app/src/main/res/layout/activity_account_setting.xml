@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:background="@color/global_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_titile_vive"
+        style="@style/FillHeight_44">
+
+        <include
+            android:id="@+id/title"
+            layout="@layout/app_title" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_titile_vive"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_account_feedback"
+            style="@style/MatchHeight_45"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_account_feedback"
+                style="@style/WrapWrap"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/divide_15_dp"
+                android:text="@string/account_feedback"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/size_16_sp" />
+
+            <TextView
+                style="@style/WrapWrap"
+                android:layout_alignTop="@+id/tv_account_feedback"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/divide_15_dp"
+                android:drawableRight="@mipmap/enter"
+                android:textColor="@color/black_8"
+                android:textSize="@dimen/size_14_sp" />
+        </RelativeLayout>
+
+        <include layout="@layout/default_line_view" />
+
+        <RelativeLayout
+            android:id="@+id/rl_account_grade"
+            style="@style/MatchHeight_45"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_account_grade"
+                style="@style/WrapWrap"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/divide_15_dp"
+                android:text="给应用评价"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/size_16_sp" />
+
+            <TextView
+                style="@style/WrapWrap"
+                android:layout_alignTop="@+id/tv_account_grade"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/divide_15_dp"
+                android:drawableRight="@mipmap/enter"
+                android:textColor="@color/black_8"
+                android:textSize="@dimen/size_14_sp" />
+        </RelativeLayout>
+
+        <include layout="@layout/default_line_view" />
+
+        <RelativeLayout
+            android:id="@+id/rl_account_version_number"
+            style="@style/MatchHeight_45"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_account_version_number"
+                style="@style/WrapWrap"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/divide_15_dp"
+                android:text="@string/account_version_number"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/size_16_sp" />
+
+            <TextView
+                android:id="@+id/tv_version_number"
+                style="@style/WrapWrap"
+                android:layout_alignTop="@+id/tv_account_version_number"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/divide_15_dp"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/size_14_sp" />
+        </RelativeLayout>
+
+        <include layout="@layout/default_line_view" />
+
+        <RelativeLayout
+            android:id="@+id/rl_account_cache"
+            style="@style/MatchHeight_45"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_account_cache"
+                style="@style/WrapWrap"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/divide_15_dp"
+                android:text="@string/account_cache"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/size_16_sp" />
+
+            <TextView
+                android:id="@+id/tv_cache"
+                style="@style/WrapWrap"
+                android:layout_alignTop="@+id/tv_account_cache"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/divide_15_dp"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/size_14_sp" />
+        </RelativeLayout>
+
+        <include layout="@layout/title_line" />
+    </LinearLayout>
+</RelativeLayout>

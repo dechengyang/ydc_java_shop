@@ -244,7 +244,8 @@ public class LoginActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView
                 ll_agreement.setVisibility(View.VISIBLE);
                 break;
             case R.id.tv_forgetpwd:
-
+               Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.iv_weixin:
@@ -254,6 +255,7 @@ public class LoginActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView
 
 
                 break;
+
         }
     }
 
