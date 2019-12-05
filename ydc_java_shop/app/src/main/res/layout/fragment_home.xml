@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/global_background"
     android:fitsSystemWindows="true"
-    android:background="#e9546b">
+    android:orientation="vertical">
+
+    <com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/swipe_refresh_header"
+            layout="@layout/layout_google_hook_header" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/swipe_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/swipe_load_more_footer"
+            layout="@layout/layout_google_hook_footer" />
+
+    </com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout>
 </RelativeLayout>

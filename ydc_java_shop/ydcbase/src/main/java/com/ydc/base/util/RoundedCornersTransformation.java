@@ -1,4 +1,4 @@
-package com.ydcjavashop.shop.util;
+package com.ydc.base.util;
 
 /**
  * Copyright (C) 2015 Wasabeef
@@ -20,8 +20,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.Transformation;
@@ -30,55 +31,48 @@ import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapResource;
 
 /**
- * Glide圆形图片转换器
+ * Glide圆角图片转换器
  *
  * @author LZRUI
  */
-public class CropCircleTransformation implements Transformation<Bitmap> {
+public class RoundedCornersTransformation implements Transformation<Bitmap> {
 
     private BitmapPool mBitmapPool;
+    private int mRadius;
+    private int mDiameter;
 
-    public CropCircleTransformation(Context context) {
-        this(Glide.get(context).getBitmapPool());
+    public RoundedCornersTransformation(Context context, int radius) {
+        this(Glide.get(context).getBitmapPool(), radius);
     }
 
-    private CropCircleTransformation(BitmapPool pool) {
-        this.mBitmapPool = pool;
+    private RoundedCornersTransformation(BitmapPool pool, int radius) {
+        mBitmapPool = pool;
+        mRadius = radius;
+        mDiameter = mRadius * 2;
     }
 
     @Override
     public Resource<Bitmap> transform(Resource<Bitmap> resource, int outWidth, int outHeight) {
         Bitmap source = resource.get();
-        int size = Math.min(source.getWidth(), source.getHeight());
 
-        int width = (source.getWidth() - size) / 2;
-        int height = (source.getHeight() - size) / 2;
+        int width = source.getWidth();
+        int height = source.getHeight();
 
-        Bitmap bitmap = mBitmapPool.get(size, size, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = mBitmapPool.get(width, height, Bitmap.Config.ARGB_8888);
         if (bitmap == null) {
-            bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         }
 
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
-        BitmapShader shader = new BitmapShader(source, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
-        if (width != 0 || height != 0) {
-            // source isn't square, move viewport to center
-            Matrix matrix = new Matrix();
-            matrix.setTranslate(-width, -height);
-            shader.setLocalMatrix(matrix);
-        }
-        paint.setShader(shader);
         paint.setAntiAlias(true);
-
-        float r = size / 2f;
-        canvas.drawCircle(r, r, r, paint);
-
+        paint.setShader(new BitmapShader(source, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+        canvas.drawRoundRect(new RectF(0, 0, width, height), mRadius, mRadius, paint);
         return BitmapResource.obtain(bitmap, mBitmapPool);
     }
 
     @Override
     public String getId() {
-        return "CropCircleTransformation()";
+        return "RoundedTransformation(radius=" + mRadius + ", diameter=" + mDiameter + ")";
     }
 }

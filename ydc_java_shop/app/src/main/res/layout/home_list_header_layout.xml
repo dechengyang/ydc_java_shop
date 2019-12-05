@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/ll_head_data"
+    android:background="@color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/divide_6_dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/ll_group"
+        style="@style/MatchMatch">
+        <com.zaaach.transformerslayout.TransformersLayout
+            android:id="@+id/transformers_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            app:tl_spanCount="5"
+            app:tl_lines="2"
+            app:tl_scrollbarWidth="72dp"
+            app:tl_scrollbarHeight="4dp"
+            app:tl_scrollbarRadius="2dp"
+            app:tl_scrollbarMarginTop="6dp"
+            app:tl_scrollbarTrackColor="#f0f0f0"
+            app:tl_scrollbarThumbColor="#FFC107"/>
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

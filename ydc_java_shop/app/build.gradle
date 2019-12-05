@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.ydcjavashop.shop"
-        minSdkVersion 15
+        minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -47,10 +47,13 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.0'
     implementation files('libs/MaterialDesign.jar')
 
+
+
     implementation project(':ydcstaticresource')
     implementation project(':ydcdatarepository')
     implementation project(':ydcconfig')
     implementation project(':ydcmvp')
     implementation project(':ydcnetworkservice')
     implementation project(':ydcbase')
+    implementation project(':ydctransformerslayout')
 }
