@@ -1,6 +1,5 @@
 package com.ydcjavashop.shop.account;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -20,7 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 @CreatePresenter(LoginPresenter.class)
-public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView {
+public class UpdatePwdActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView{
 
 
     @Bind(R.id.title)
@@ -28,10 +27,9 @@ public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILogi
     @Bind(R.id.ll_titile_vive)
     LinearLayout ll_titile_vive;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_account_manage);
+        setContentView(R.layout.activity_updatepwd);
         ButterKnife.bind(this);
         super.onCreate(savedInstanceState);
 
@@ -91,7 +89,7 @@ public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILogi
 
     @Override
     protected void initTitle() {
-        setTitle(getResources().getString(R.string.account_manage_title));
+        setTitle("修改登录密码");
     }
 
     @Override
@@ -109,16 +107,12 @@ public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILogi
 
     }
 
-    @OnClick({R.id.ll_safety})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.ll_safety:
-                Intent  intent = new Intent(AccountManageActivity.this, AccountSecuritySettingActivity.class);
-                startActivity(intent);
-                break;
-
-        }
-    }
+//    @OnClick({R.id.ll_pwd})
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//
+//        }
+//    }
 
     private void refreshView() {
     }

@@ -20,18 +20,16 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 @CreatePresenter(LoginPresenter.class)
-public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView {
-
+public class AccountSecuritySettingActivity extends AbstractBaseMvpFragmentActivity<ILoginMvpView, LoginPresenter> implements ILoginMvpView {
 
     @Bind(R.id.title)
     TitleView title;
     @Bind(R.id.ll_titile_vive)
     LinearLayout ll_titile_vive;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_account_manage);
+        setContentView(R.layout.activity_accountsecuritysetting);
         ButterKnife.bind(this);
         super.onCreate(savedInstanceState);
 
@@ -91,7 +89,7 @@ public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILogi
 
     @Override
     protected void initTitle() {
-        setTitle(getResources().getString(R.string.account_manage_title));
+        setTitle("账号安全");
     }
 
     @Override
@@ -109,12 +107,13 @@ public class AccountManageActivity extends AbstractBaseMvpFragmentActivity<ILogi
 
     }
 
-    @OnClick({R.id.ll_safety})
+    @OnClick({R.id.ll_pwd})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.ll_safety:
-                Intent  intent = new Intent(AccountManageActivity.this, AccountSecuritySettingActivity.class);
+            case R.id.ll_pwd:
+                Intent intent = new Intent(AccountSecuritySettingActivity.this, UpdatePwdActivity.class);
                 startActivity(intent);
+
                 break;
 
         }

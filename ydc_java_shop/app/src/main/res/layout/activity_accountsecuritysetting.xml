@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_titile_vive"
+        style="@style/FillHeight_44">
+
+        <include
+            android:id="@+id/title"
+            layout="@layout/app_title" />
+    </LinearLayout>
+
+
+    <include layout="@layout/title_line" />
+
+    <ScrollView style="@style/MatchMatch">
+
+        <LinearLayout
+            style="@style/MatchMatch"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ll_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_45_dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/divide_15_dp"
+                android:paddingRight="@dimen/divide_15_dp">
+
+                <TextView
+                    android:id="@+id/tv_nick_names"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/divide_45_dp"
+                    android:gravity="center"
+                    android:text="登录密码修改"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/size_16_sp" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_45_dp"
+                    android:layout_marginRight="@dimen/divide_20_dp"
+                    android:layout_toRightOf="@+id/tv_nick_names"
+                    android:gravity="right|center"
+                    android:text=""
+                    android:textColor="@color/gray_c7"
+                    android:textSize="@dimen/size_14_sp" />
+
+                <ImageView
+                    style="@style/WrapWrap"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/enter" />
+            </RelativeLayout>
+
+            <include layout="@layout/default_line_view" />
+
+            <RelativeLayout
+                android:id="@+id/ll_signature"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divide_45_dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/divide_15_dp"
+                android:paddingRight="@dimen/divide_15_dp">
+
+                <TextView
+                    android:id="@+id/tv_nick_signature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/divide_45_dp"
+                    android:gravity="center"
+                    android:text="支付密码修改"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/size_16_sp" />
+
+                <TextView
+                    android:id="@+id/tv_signature_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/divide_45_dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="@dimen/divide_20_dp"
+                    android:gravity="center|right"
+                    android:textColor="@color/gray_c7"
+                    android:textSize="@dimen/size_14_sp" />
+
+                <ImageView
+                    style="@style/WrapWrap"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/enter" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
