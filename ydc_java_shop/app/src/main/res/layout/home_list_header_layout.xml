@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_head_data"
-    android:background="@color/white"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/divide_6_dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/white"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:orientation="vertical"
         android:id="@+id/ll_group"
-        style="@style/MatchMatch">
+        style="@style/MatchMatch"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="@dimen/divide_10_dp" />
+
         <com.zaaach.transformerslayout.TransformersLayout
             android:id="@+id/transformers_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
-            app:tl_spanCount="5"
             app:tl_lines="2"
-            app:tl_scrollbarWidth="72dp"
             app:tl_scrollbarHeight="4dp"
-            app:tl_scrollbarRadius="2dp"
             app:tl_scrollbarMarginTop="6dp"
+            app:tl_scrollbarRadius="2dp"
+            app:tl_scrollbarThumbColor="#FFC107"
             app:tl_scrollbarTrackColor="#f0f0f0"
-            app:tl_scrollbarThumbColor="#FFC107"/>
+            app:tl_scrollbarWidth="72dp"
+            app:tl_spanCount="5" />
+
         <LinearLayout
             android:id="@+id/ll_content"
-            android:orientation="vertical"
-            android:background="@color/white"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"></LinearLayout>
     </LinearLayout>
 </LinearLayout>

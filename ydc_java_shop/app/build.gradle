@@ -47,6 +47,9 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.0'
     implementation files('libs/MaterialDesign.jar')
 
+    //https://github.com/youth5201314/banner
+    implementation 'com.youth.banner:banner:1.4.10'  //最新版本
+
 
 
     implementation project(':ydcstaticresource')

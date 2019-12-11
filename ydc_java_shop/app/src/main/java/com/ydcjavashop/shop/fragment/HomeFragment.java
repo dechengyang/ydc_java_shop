@@ -24,9 +24,13 @@ import com.ydcjavashop.shop.home.adapter.RecommendIndexAdapter;
 import com.ydcjavashop.shop.home.bean.DataFactory;
 import com.ydcjavashop.shop.home.bean.Nav;
 import com.ydcjavashop.shop.home.bean.RecommendSpecialEntity;
+import com.ydcjavashop.shop.main.App;
+import com.ydcjavashop.shop.util.GlideImageLoader;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnLoadMoreListener;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.OnRefreshListener;
 import com.ydcjavashop.shop.view.swipetoloadlayout.base.SwipeToLoadLayout;
+import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.zaaach.transformerslayout.TransformersLayout;
 import com.zaaach.transformerslayout.TransformersOptions;
 import com.zaaach.transformerslayout.holder.Holder;
@@ -43,14 +47,15 @@ import butterknife.ButterKnife;
  */
 
 @CreatePresenter(LoginPresenter.class)
-public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPresenter> implements ILoginMvpView, OnRefreshListener, OnLoadMoreListener {
+public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPresenter> implements ILoginMvpView, OnBannerListener, OnRefreshListener, OnLoadMoreListener {
     RecyclerView homeRecycler;
     SwipeToLoadLayout mRefresh;
     private TransformersLayout<Nav> transformersLayout;
     private RecommendIndexAdapter mAdapter;
     private View headView;
     private LinearLayout ll_content;
-    private  List<RecommendSpecialEntity> mList=new ArrayList<>();
+    private Banner banner;
+    private List<RecommendSpecialEntity> mList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,11 +80,9 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
     @Override
     protected void initView() {
 
-
-        initBanner();
-        homeRecycler=(RecyclerView)rootView.findViewById(R.id.swipe_target);
-        mRefresh=(SwipeToLoadLayout)rootView.findViewById(R.id.refresh);
-        mAdapter= new RecommendIndexAdapter();
+        homeRecycler = (RecyclerView) rootView.findViewById(R.id.swipe_target);
+        mRefresh = (SwipeToLoadLayout) rootView.findViewById(R.id.refresh);
+        mAdapter = new RecommendIndexAdapter();
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         homeRecycler.setLayoutManager(manager);
@@ -88,20 +91,39 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
         mRefresh.setOnLoadMoreListener(this);
         mRefresh.setLoadMoreEnabled(false);
         setHeader(homeRecycler);
-        headView=mAdapter.getHeaderView();
-        ll_content=(LinearLayout) headView.findViewById(R.id.ll_content);
-        transformersLayout=(TransformersLayout) headView.findViewById(R.id.transformers_layout);
+        headView = mAdapter.getHeaderView();
+        ll_content = (LinearLayout) headView.findViewById(R.id.ll_content);
+        banner = (Banner) headView.findViewById(R.id.banner);
+        ViewGroup.LayoutParams params = (ViewGroup.LayoutParams) banner.getLayoutParams();
+//获取当前控件的布局对象
+        params.height = App.H / 4;//设置当前控件布局的高度
+        banner.setLayoutParams(params);//将设置好的布局参数应用到控件中
+        transformersLayout = (TransformersLayout) headView.findViewById(R.id.transformers_layout);
     }
 
     private void setHeader(RecyclerView view) {
         View header = LayoutInflater.from(getActivity()).inflate(R.layout.home_list_header_layout, view, false);
         mAdapter.setHeaderView(header);
     }
-    private void initBanner(){
+
+    private void refreshBanner(List<String> imagesUrl) {
+        banner.setImages(imagesUrl)
+                .setImageLoader(new GlideImageLoader())
+                .setOnBannerListener(this)
+                .start();
     }
 
     @Override
     protected void setData() {
+
+
+        List<String> bannerList = new ArrayList<>();
+        bannerList.add("https://img.alicdn.com/tps/TB1oHwXMVXXXXXnXVXXXXXXXXXX-570-400.jpg");
+        bannerList.add("https://img.alicdn.com/tps/TB1XF.gJpXXXXaUXVXXXXXXXXXX-570-400.jpg");
+        bannerList.add("https://img.alicdn.com/tps/i4/TB1VGZBJXXXXXX3aXXXCtjtIVXX-570-400.jpg");
+        bannerList.add("https://aecpm.alicdn.com/simba/img/TB1t9gUXXXXXXczaVXXSutbFXXX.jpg");
+        refreshBanner(bannerList);
+
         final List<Nav> navList = DataFactory.loadData();
         //options可选配置
         TransformersOptions options = new TransformersOptions.Builder()
@@ -124,17 +146,18 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
                     public Holder<Nav> createHolder(View itemView) {
                         return new NavAdapterViewHolder(itemView);
                     }
+
                     @Override
                     public int getLayoutId() {
                         return R.layout.item_nav_list;
                     }
                 });
 
-        for (int i=0;i<15;i++){
-            RecommendSpecialEntity m=new RecommendSpecialEntity();
-            if(i==2){
+        for (int i = 0; i < 15; i++) {
+            RecommendSpecialEntity m = new RecommendSpecialEntity();
+            if (i == 2) {
                 m.setImgUrl("https://img.alicdn.com/tps/TB1XF.gJpXXXXaUXVXXXXXXXXXX-570-400.jpg");
-            }else {
+            } else {
                 m.setImgUrl("https://img.alicdn.com/tps/TB1oHwXMVXXXXXnXVXXXXXXXXXX-570-400.jpg");
             }
             mList.add(m);
@@ -150,17 +173,7 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
         //getMvpPresenter().loadNews(0, 0);
     }
 
-    //如果你需要考虑更好的体验，可以这么操作
-    @Override
-    public void onStart() {
-        super.onStart();
 
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
 
     @Override
     public void onDestroy() {
@@ -172,7 +185,6 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
 
         ButterKnife.unbind(this);
     }
-
 
 
     @Override
@@ -226,7 +238,6 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
     }
 
 
-
     @Override
     public void onRefresh() {
 
@@ -238,4 +249,23 @@ public class HomeFragment extends AbstractBaseMvpFragment<ILoginMvpView, LoginPr
     }
 
 
+    @Override
+    public void OnBannerClick(int position) {
+
+    }
+
+    //如果你需要考虑更好的体验，可以这么操作
+    @Override
+    public void onStart() {
+        super.onStart();
+        //开始轮播
+        banner.startAutoPlay();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //结束轮播
+        banner.stopAutoPlay();
+    }
 }
